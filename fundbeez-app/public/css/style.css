@@ -1,0 +1,21 @@
+body {
+    min-height: 3000px;
+  }
+  .jumbotron {
+    padding-top: 5rem;
+    background: url('img/banner/Banner2.png');
+    background-size: cover;
+    background-position: center;
+  }
+  #reason {
+    background-color: #b3e1eb;
+  }
+  
+  #diawasi {
+    padding: 4rem 3rem;
+  }
+  #kontenfooter {
+    background-color: #333333;
+    padding: 2rem 1rem;
+  }
+  
