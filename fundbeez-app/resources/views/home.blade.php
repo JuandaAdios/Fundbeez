@@ -37,7 +37,7 @@
           </ul>
         </div>
         <div class="btn-group ms-auto" role="group" aria-label="Basic example">
-          <button type="button" class="btn shadow-lg ms-auto" style="background-color: #fbfbfb"><a href="login.html">Masuk</a></button>
+          <button type="button" class="btn shadow-lg ms-auto" style="background-color: #fbfbfb"><a href="/login">Masuk</a></button>
           <button type="button" class="btn shadow-lg ms-auto" style="background-color: #0098ba">Daftar</button>
         </div>
       </div>
