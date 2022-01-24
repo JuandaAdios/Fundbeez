@@ -12,9 +12,13 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form method="post" action="{{url('login')}}" class="sign-in-form">
+          <form method="post" action="{{url('register')}}" class="sign-in-form">
               @csrf
-            <h2 class="title">Sign In</h2>
+            <h2 class="title">Sign Up</h2>
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Name" name="name" value="{{ old('name') }}" />
+              </div>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" placeholder="Username" name="email" value="{{ old('email') }}" />
@@ -23,7 +27,13 @@
               <i class="fas fa-lock"></i>
               <input type="password" placeholder="password" name="password" />
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="confirm password" name="password_confirmation" />
+              </div>
+
+            <input type="submit" value="register" class="btn solid" />
             @foreach ($errors->all() as $error)
 
             <div>{{ $error }}</div>
