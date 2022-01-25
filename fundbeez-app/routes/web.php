@@ -35,15 +35,20 @@ Route::prefix('/')->group(function () {
 
     Route::post('/login', 'AuthController@login');
     Route::post('/register', 'AuthController@register');
+
+    Route::get('/email/verification/{id}/{hash}', 'AuthController@verify')->middleware(['signed', 'auth'])->name('verification.verify');
 });
 
+
+// login required
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', function () {
         return view('home');
     });
 
     Route::get('/logout', 'AuthController@logout')->name('logout');
+    Route::get('/email/resend', function () {
+        return view('resend_verify');
+    });
+    Route::post('/email/verification-notification', 'AuthController@resendVerification')->middleware(['throttle:6,1'])->name('verification.send');
 });
-
-// login required
-

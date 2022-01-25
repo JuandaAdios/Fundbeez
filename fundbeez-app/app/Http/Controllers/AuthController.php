@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use DB;
 
 class AuthController extends Controller
 {
@@ -23,9 +25,25 @@ class AuthController extends Controller
         $data = $request->validated();
 
         $data['password'] = bcrypt($data['password']);
-        User::create($data);
+        DB::beginTransaction();
+        try{
 
-        return redirect('/home');
+            // create user
+            $user = User::create($data);
+
+            // user auto login
+            Auth::attempt(['email' => $user->email, 'password' => $user->password]);
+
+            // send email verification
+            $user->sendEmailVerificationNotification();
+
+            DB::commit();
+        }catch(\Exception $e){
+            DB::rollback();
+            return back()->withInput($data)->withErrors(['errors' => 'Terjadi kesalahan pada server']);
+        }
+
+        return redirect('/');
     }
 
     public function logout(Request $request){
@@ -34,5 +52,17 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/login');
+    }
+
+    public function verify(EmailVerificationRequest $request){
+        $request->fulfill();
+
+        return redirect('/home');
+    }
+
+    public function resendVerification(Request $request){
+        $request->user()->sendEmailVerificationNotification();
+
+        return back()->with(['message' => 'Verification link sent!']);
     }
 }
