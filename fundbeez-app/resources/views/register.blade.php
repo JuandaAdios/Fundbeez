@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <title>SignIn / Signup</title>
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="{{url('css/login.css');}}" />
   </head>
   <body>
     <div class="container">

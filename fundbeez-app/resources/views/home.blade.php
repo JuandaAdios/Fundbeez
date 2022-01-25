@@ -9,8 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
     <!-- My Css -->
-    <link rel="stylesheet" href="style.css" />
-
+    <link rel="stylesheet" href="{{url('css/style.css');}}" />
     <title>Fundbeez</title>
   </head>
   <body>
@@ -37,8 +36,8 @@
           </ul>
         </div>
         <div class="btn-group ms-auto" role="group" aria-label="Basic example">
-          <button type="button" class="btn shadow-lg ms-auto" style="background-color: #fbfbfb"><a href="/login">Masuk</a></button>
-          <button type="button" class="btn shadow-lg ms-auto" style="background-color: #0098ba">Daftar</button>
+          <a href="login.html" class="btn shadow-lg ms-auto" style="background-color: #fbfbfb">Masuk</a>
+          <a href="#" class="btn shadow-lg ms-auto" style="background-color: #0098ba">Daftar</a>
         </div>
       </div>
     </nav>
