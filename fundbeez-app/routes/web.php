@@ -33,6 +33,10 @@ Route::prefix('/')->group(function () {
         return view('login');
     })->name('login');
 
+    Route::get('/emailsent', function () {
+        return view('emailsent');
+    })->name('emailsent');
+
     Route::post('/login', 'AuthController@login');
     Route::post('/register', 'AuthController@register');
 

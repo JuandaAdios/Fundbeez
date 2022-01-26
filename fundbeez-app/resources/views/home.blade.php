@@ -44,7 +44,7 @@
     <!-- Akhir Navbar -->
 
     <!-- jumbotron -->
-    <section class="jumbotron text-start jumbotron-light">
+    <section class="jumbotron text-start jumbotron-light" >
       <h1 class="display-6 fw-bold" style="color: aliceblue">Platform</h1>
       <h1 class="display-6 fw-bold" style="color: aliceblue">Securities</h1>
       <h1 class="display-6 fw-bold" style="color: aliceblue">Crowdfunding</h1>
