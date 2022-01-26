@@ -50,5 +50,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/email/resend', function () {
         return view('resend_verify');
     });
-    Route::post('/email/verification-notification', 'AuthController@resendVerification')->middleware(['throttle:6,1'])->name('verification.send');
+
+    // 1 trigger in 2 minutes
+    Route::post('/email/verification-notification', 'AuthController@resendVerification')->middleware(['throttle:1,2'])->name('verification.send');
 });

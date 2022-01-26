@@ -43,7 +43,7 @@ class AuthController extends Controller
             return back()->withInput($data)->withErrors(['errors' => 'Terjadi kesalahan pada server']);
         }
 
-        return redirect('/');
+        return redirect('/home');
     }
 
     public function logout(Request $request){
