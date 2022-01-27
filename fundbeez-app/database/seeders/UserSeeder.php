@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('fundbeez123'),
             ],
             [
-                'name' => 'user funbeez',
+                'name' => 'User Fundbeez',
                 'role_id' => Role::where('name', 'user')->value('id'),
                 'email' => 'user@funbeez.com',
                 'password' => bcrypt('fundbeez123'),
