@@ -33,6 +33,8 @@ Route::prefix('/')->group(function () {
         return view('pages.emailsent');
     })->name('emailsent');
 
+
+
     Route::post('/login', 'AuthController@login');
     Route::post('/register', 'AuthController@register');
 
@@ -48,8 +50,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/logout', 'AuthController@logout')->name('logout');
     Route::get('/email/resend', function () {
-        return view('pages.resend_verify');
+        return view('pages.emailsent');
     });
+
+    Route::get('/daftar-bisnis', function () {
+        return view('pages.customer.daftar_bisnis');
+    })->name('daftar_bisnis');
 
     // 1 trigger in 2 minutes
     Route::post('/email/verification-notification', 'AuthController@resendVerification')->middleware(['throttle:1,2'])->name('verification.send');

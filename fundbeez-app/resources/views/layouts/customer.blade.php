@@ -29,11 +29,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                        <a class="nav-link active" aria-current="page" href="home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Daftar Bisnis</a>
+                        <a class="nav-link" href="daftar-bisnis">Daftar Bisnis</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Ajukan Pendanaan</a>
@@ -58,7 +59,7 @@
                     </div>
                 @else
                     <div class="btn-group ms-auto" role="group" aria-label="Basic example">
-                        <a href="login.html" class="btn shadow-lg ms-auto" style="background-color: #fbfbfb">Masuk</a>
+                        <a href="login" class="btn shadow-lg ms-auto" style="background-color: #fbfbfb">Masuk</a>
                         <a href="#" class="btn text-white shadow-lg ms-auto" style="background-color: #0098ba">Daftar</a>
                     </div>
                 @endif

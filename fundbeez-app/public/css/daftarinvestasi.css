@@ -1,0 +1,59 @@
+.jumbotron {
+    position: relative;
+    padding-top: 8rem;
+    background-color: #b3e0ea;
+    background-position: center;
+    height: 35rem;
+    overflow: hidden;
+}
+
+.jumbotron .container {
+    position: relative;
+    z-index: 1;
+}
+.vector {
+    position: absolute;
+    right: 0;
+    top: -10%;
+}
+#daftarbisnis {
+    padding-top: 5rem;
+}
+.card {
+    display: grid;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 8px #b3e0ea65;
+    font-family: roboto;
+    text-align: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin: 30px;
+}
+
+.card-stats {
+    grid-area: stats;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #0098ba;
+}
+.card-stats .stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 10px;
+}
+.card:hover {
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px #b3e0ea;
+}
+
+#kontenfooter {
+    background-color: #333333;
+    padding: 2rem 1rem;
+}

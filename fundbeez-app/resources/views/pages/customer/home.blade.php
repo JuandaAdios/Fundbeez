@@ -1,6 +1,7 @@
 @extends('layouts.customer')
 
 @section('title', 'Fundbeez')
+<link rel="icon" href="{!! asset('img/logo/icon-fundbeez.png') !!}"/>
 
 @section('custome-css')
     <link rel="stylesheet" href="{{ asset('css/customer_home.css') }}" />
@@ -8,6 +9,7 @@
 @endsection
 
 @section('content')
+
 
     <!-- Akhir Navbar -->
 
@@ -20,9 +22,10 @@
                 Crowdfunding <br>
                 Di Indonesia</h1>
             <p class="lead" style="color: aliceblue">Investasi dan kembangkan bisnismu sekarang dengan Fundbeez</p>
-            <a class="btn btn-lg rounded-pill me-3" href="/investment" style="background-color: #ffd600">Ajukan Pendanaan</a>
-            <a class="btn btn-lg rounded-pill" href="#" style="background-color: #0098ba">Daftar Sebagai Investor</a>
+            <a class="btn btn-lg rounded-pill" href="#" role="button" style="background-color: #ffd600">Ajukan Pendanaan</a>
+            <a class="btn btn-lg rounded-pill" href="#" role="button" style="background-color: #0098ba">Daftar Sebagai Investor</a>
         </div>
+
         <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#ffffff" fill-opacity="1" d="M0,256L34.3,245.3C68.6,235,137,213,206,218.7C274.3,224,343,256,411,256C480,256,549,224,617,224C685.7,224,754,256,823,256C891.4,256,960,224,1029,208C1097.1,192,1166,192,1234,186.7C1302.9,181,1371,171,1406,165.3L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
         </svg>
@@ -46,7 +49,7 @@
             <div class="row text-center">
                 <div class="col">
                     <h3>Investor Terdaftar</h3>
-                </div>
+                </div> 
                 <div class="col">
                     <h3>Bisnis Terdaftar</h3>
                 </div>
@@ -130,7 +133,7 @@
                 </div>
             </div>
             <div class="row text-center">
-                <a class="btn btn-lg rounded-pill" href="#" role="button" style="background-color: #86cddd">Tampilkan Bisnis Lainnya</a>
+                <a class="btn btn-lg rounded-pill" href="daftar-bisnis" role="button" style="background-color: #86cddd">Tampilkan Bisnis Lainnya</a>
             </div>
         </div>
     </section>
