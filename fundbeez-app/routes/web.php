@@ -14,12 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 // public route
-
-// Email Verification Routes...
-// Route::get('/email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-// Route::get('/email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
-// Route::get('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
-
 Route::prefix('/')->group(function () {
     Route::get('/', function () {
         return view('welcome');
@@ -57,4 +51,15 @@ Route::middleware(['auth'])->group(function () {
 
     // 1 trigger in 2 minutes
     Route::post('/email/verification-notification', 'AuthController@resendVerification')->middleware(['throttle:1,2'])->name('verification.send');
+
+    Route::post('/import', 'InvestmentController@importRegisteredInvestor');
+
+    Route::get('/investment', function () {
+        return view('investment');
+    });
+    Route::post('/investment', 'InvestmentController@store');
 });
+
+// Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
+//     Route::post('/import', 'InvestationRequestController@importRegisteredInvestor');
+// });
