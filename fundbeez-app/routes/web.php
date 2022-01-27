@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // public route
 Route::prefix('/')->group(function () {
     Route::get('/', function () {
-        return view('welcome');
+        return redirect()->to(route('home'));
     });
 
     Route::get('/register', function () {
@@ -42,7 +42,7 @@ Route::prefix('/')->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', function () {
         return view('pages.customer.home');
-    });
+    })->name('home');
 
     Route::get('/logout', 'AuthController@logout')->name('logout');
     Route::get('/email/resend', function () {
@@ -55,7 +55,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/import', 'InvestmentController@importRegisteredInvestor');
 
     Route::get('/investment', function () {
-        return view('investment');
+        return view('pages.customer.investment');
     });
     Route::post('/investment', 'InvestmentController@store');
 });
