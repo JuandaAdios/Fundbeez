@@ -124,7 +124,7 @@
                             <div class="input-field">
                                 <input class="form-control" type="text" placeholder="Alamat" name="company_address" value="{{ old('company_address') }}" required />
                             </div>
-                            <button class="btn btn-warning" onclick="changeForm()">Lanjutkan</button>
+                            <div class="btn btn-warning" onclick="changeForm()">Lanjutkan</div>
                         </div>
                         <div>
                             <label class="image-placeholder mb-4" for="companyImage">
@@ -164,16 +164,17 @@
                                 <span class="input-group-text">Rp</span>
                                 <input class="form-control" type="number" placeholder="Perkiraan dana yang dibutuhkan" name="needed_fund" value="{{ old('needed_fund') }}" required />
                             </div>
-                            <div class="input-field">
-                                <input class="form-control" type="number" placeholder="Perkiraan saham yang dilepas ke umum" name="public_stock" value="{{ old('public_stock') }}" required />
+                            <div class="input-field input-group">
+                                <input class="form-control" type="number" placeholder="Perkiraan lot saham yang dilepas ke umum" name="public_stock" value="{{ old('public_stock') }}" required />
+                                <span class="input-group-text">%</span>
                             </div>
                             <div class="input-field input-group">
                                 <span class="input-group-text">Rp</span>
                                 <input class="form-control" type="number" placeholder="Omzet setelah jadi penerbit" name="profit_prediction" value="{{ old('profit_prediction') }}" required />
                             </div>
                             <div class="d-flex">
-                                <button type="submit" class="btn btn-warning">Selesai</button>
-                                <p class="text-white m-auto" style="font-size: 30px;cursor: pointer;" onclick="resetForm()"><i class="fas fa-arrow-left"></i> Sebelumnya</p>
+                                <p class="text-white" style="font-size: 30px;cursor: pointer;" onclick="resetForm()"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Sebelumnya</p>
+                                <button type="submit" class="btn btn-warning  m-auto">Selesai</button>
                             </div>
                         </div>
                         <div style="height: 500px;overflow-y:scroll">
