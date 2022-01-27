@@ -16,9 +16,8 @@ class Role
      */
     public function handle(Request $request, Closure $next, $role)
     {
-        // hardcode, will change later
-        if($request->user()->email != 'khadafisani89@gmail.com'){
-            return route('login');
+        if(auth()->user()->role->name != $role){
+            return back();
         }
         return $next($request);
     }

@@ -41,4 +41,19 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $visible = [
+        'name',
+        'role_id',
+        'email',
+        'email_verified_at',
+        'role',
+        'created_at',
+        'updated_at',
+    ];
+
+
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
 }

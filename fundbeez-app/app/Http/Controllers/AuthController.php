@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use DB;
 
@@ -18,18 +19,25 @@ class AuthController extends Controller
             // Authentication failed...
            return back()->withInput(['email' => $credentials['email']])->withErrors(['errors' => 'Email atau password salah!']);
         }
-        return redirect('/home');
+
+        if(auth()->user()->role->name == 'admin'){
+            return redirect('/admin/home');
+        }else{
+            return redirect('/home');
+        }
     }
 
     public function register(RegisterRequest $request){
         $data = $request->validated();
 
-        $data['password'] = bcrypt($data['password']);
         DB::beginTransaction();
         try{
-
             // create user
-            $user = User::create($data);
+            $user = new User;
+            $user->fill($data);
+            $user->password = bcrypt($data['password']);
+            $user->role_id = Role::where('name', 'user')->value('id');
+            $user->save();
 
             // user auto login
             Auth::attempt(['email' => $user->email, 'password' => $user->password]);
