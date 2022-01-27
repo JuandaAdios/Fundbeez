@@ -27,4 +27,9 @@ class Investment extends Model
         'caption',
         'user_id',
     ];
+
+    protected $cast = [
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
+    ];
 }

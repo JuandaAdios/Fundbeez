@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // public route
 Route::prefix('/')->group(function () {
     Route::get('/', function () {
-        return view('pages.customer.register');
+        return view('pages.customer.home');
     });
 
     Route::get('/register', function () {

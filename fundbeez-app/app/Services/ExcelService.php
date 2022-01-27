@@ -12,11 +12,12 @@ use Closure;
 
 class ExcelService
 {
-    protected $data, $key, $model, $fillable;
+    protected $data, $key, $model, $fillable, $attributes;
 
     public function __construct($model){
         $this->model = $model;
         $this->fillable = (new $model())->getFillable();
+        $this->attributes = \Schema::getColumnListing((new $this->model)->getTable());
     }
 
     public function readExcel($file){
@@ -65,6 +66,9 @@ class ExcelService
     public function update(){
         DB::beginTransaction();
         try{
+            // allow id to fill $result
+            $this->fillable = array_merge($this->fillable, ['id']);
+
             foreach($this->data as $data){
                 $value = array_values($data);
 
@@ -91,12 +95,11 @@ class ExcelService
     public function get(){
         $excel = new SpreadSheet();
         $sheet = $excel->getActiveSheet();
-        $attributes = \Schema::getColumnListing((new $this->model)->getTable());
         $datas = $this->model::all();
         $alphabet = range('A', 'Z');
 
         // set header
-        foreach($attributes as $index => $value){
+        foreach($this->attributes as $index => $value){
             $sheet->setCellValue($alphabet[$index].'1', $value);
         }
 

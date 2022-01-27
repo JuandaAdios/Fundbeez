@@ -180,17 +180,19 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form method="post" enctype="multipart/form-data">
+              <form method="post" enctype="multipart/form-data" action="{{url('/admin/import/company')}}">
+                @csrf
                 <div class="mb-3">
                   <label for="recipient-name" class="col-form-label">Data Company (excel):</label>
-                  <input type="text" class="form-control" id="file" name="file">
+                  <input type="file" class="form-control" id="file" name="file">
                 </div>
-              </form>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Upload Data!</button>
+              <button type="submit" class="btn btn-primary">Upload Data!</button>
             </div>
+        </form>
           </div>
         </div>
       </div>

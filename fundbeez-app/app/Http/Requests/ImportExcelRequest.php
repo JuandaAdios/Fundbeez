@@ -30,6 +30,6 @@ class ImportExcelRequest extends FormRequest
     }
 
     protected function failedValidation(Validator $validator) {
-        return redirect()->back()->withInput()->withErrors($validator->errors());
+        return back()->withInput()->withErrors($validator->errors());
     }
 }
