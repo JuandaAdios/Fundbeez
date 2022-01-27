@@ -33,7 +33,7 @@ class InvestmentStoreRequest extends FormRequest
             'two_year_ago' => 'required|numeric',
             'dividen' => 'required|numeric|between:1,100',
             'public_stock' => 'required|integer',
-            'profile_prediction' => 'required|numeric',
+            'profit_prediction' => 'required|numeric',
             'needed_fund' => 'required|numeric',
             'video_profile' => 'sometimes|url',
             'instagram' => 'sometimes',
@@ -42,10 +42,11 @@ class InvestmentStoreRequest extends FormRequest
             'linkedin' => 'sometimes',
             'caption' => 'required',
             'company_address' => 'required'
-         ];
+        ];
     }
 
-    protected function failedValidation(Validator $validator) {
+    protected function failedValidation(Validator $validator)
+    {
         return redirect()->back()->withInput()->withErrors($validator->errors());
     }
 }
