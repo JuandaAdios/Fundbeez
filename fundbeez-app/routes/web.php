@@ -19,6 +19,8 @@ Route::prefix('/')->group(function () {
         return view('pages.customer.home');
     });
 
+    Route::get('/testing/{investment}', 'InvestmentController@show');
+
     Route::get('/register', function () {
         return view('pages.customer.register');
     });

@@ -34,10 +34,10 @@
         <div class="container rounded-pill shadow-lg" style="background-color: #ffff">
             <div class="row text-center">
                 <div class="col">
-                    <h2>0</h2>
+                    <h2>{{App\Models\User::count()}}</h2>
                 </div>
                 <div class="col">
-                    <h2>0</h2>
+                    <h2>{{App\Models\Investment::count()}}</h2>
                 </div>
                 <div class="col">
                     <h2>0</h2>

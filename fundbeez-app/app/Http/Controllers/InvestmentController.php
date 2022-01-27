@@ -58,4 +58,8 @@ class InvestmentController extends Controller
         }
         return redirect('/home');
     }
+
+    public function show(Request $request, Investment $investment){
+        return view('pages.customer.home')->with(['data' => $investment]);
+    }
 }
