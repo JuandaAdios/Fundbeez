@@ -41,10 +41,17 @@
                         <a class="nav-link disabled">Investasi</a>
                     </li>
                 </ul>
-                <div class="btn-group ms-auto" role="group" aria-label="Basic example">
-                    <a href="login.html" class="btn shadow-lg ms-auto" style="background-color: #fbfbfb">Masuk</a>
-                    <a href="#" class="btn text-white shadow-lg ms-auto" style="background-color: #0098ba">Daftar</a>
-                </div>
+                @if (Auth::check())
+                    <div class="ms-auto">
+                        {{ Auth::guard('web')->user()->name }}
+                    </div>
+                @else
+                    <div class="btn-group ms-auto" role="group" aria-label="Basic example">
+                        <a href="login.html" class="btn shadow-lg ms-auto" style="background-color: #fbfbfb">Masuk</a>
+                        <a href="#" class="btn text-white shadow-lg ms-auto" style="background-color: #0098ba">Daftar</a>
+                    </div>
+                @endif
+
             </div>
         </div>
     </nav>
