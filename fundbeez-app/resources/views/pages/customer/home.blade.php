@@ -171,30 +171,6 @@
     </section>
     <!-- akhir didukung -->
 
-    <!-- konten footer -->
-    <section id="kontenfooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-4 text-white">
-                    <img src="img/Logo/logoFundbeez-sm.png" width="200rem" />
-                    <h2></h2>
-                    <h2 class="font2 fs-3">PT.Fundbeez Indonesia</h2>
-                    <h4 class="font1 fs-6">jalan jend. Sudirman blok B.89</h4>
-                </div>
-                <div class="col-4 text-white">
-                    <p class="fs-4 fw-bold"><a href="#" class="text-reset">Karir</a></p>
-                    <p class="fs-4 fw-bold"><a href="#" class="text-reset">Syarat dan Ketentuan</a></p>
-                    <p class="fs-4 fw-bold"><a href="#" class="text-reset">Hubungi Kami</a></p>
-                    <p class="fs-4 fw-bold"><a href="#" class="text-reset">Tentang Fundbeez</a></p>
-                </div>
-                <div class="col-4 text-white">
-                    <p class="fs-4">Telp.</p>
-                    <p class="fs-5">0877-9117-4370</p>
-                    <p class="fs-4">Email.</p>
-                    <p class="fs-5">fundbeez@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
 @endsection
