@@ -34,15 +34,16 @@ class InvestmentController extends Controller
     public function store(InvestmentStoreRequest $request){
         $data = $request->validated();
 
+        $companyImage = 'company-image-'. now();
+        $ownerImage = 'owner-image'. now();
+        $request->file('company_image')->move(public_path('img/investments/companies'), $companyImage);
+        $request->file('owner_image')->move(public_path('img/investments/owners'), $companyImage);
+
+        $companyImagePath = 'img/investments/companies/'.$companyImage;
+        $ownerImagePath = 'img/investments/owners/'.$ownerImage;
+
         DB::beginTransaction();
         try{
-            $companyImage = 'company-image-'. now();
-            $ownerImage = 'owner-image'. now();
-            $request->file('company_image')->move(public_path('img/investments/companies'), $companyImage);
-            $request->file('owner_image')->move(public_path('img/investments/owners'), $companyImage);
-
-            $companyImagePath = 'img/investments/companies/'.$companyImage;
-            $ownerImagePath = 'img/investments/owners/'.$ownerImage;
             $investment = new Investment;
             $investment->fill($data);
             $investment->company_image = $companyImagePath;
