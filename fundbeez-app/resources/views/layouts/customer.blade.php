@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@yield('title')</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Vendor -->
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
     <!-- My Css -->
@@ -42,8 +43,18 @@
                     </li>
                 </ul>
                 @if (Auth::check())
-                    <div class="ms-auto">
-                        {{ Auth::guard('web')->user()->name }}
+                    <div class="dropdown ms-auto">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-2"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li>
+                                <p class="px-3 fw-bold" style="color:#525252"> {{ Auth::guard('web')->user()->name }}</p>
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-fw fa-cogs"></i> Setting</a></li>
+                            <hr>
+                            <li><a class="dropdown-item" href="/logout"><i class="fas fa-fw fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
                     </div>
                 @else
                     <div class="btn-group ms-auto" role="group" aria-label="Basic example">
