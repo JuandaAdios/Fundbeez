@@ -1,0 +1,33 @@
+body {
+    min-height: 3000px;
+}
+.jumbotron {
+    position: relative;
+    padding-top: 5rem;
+    background-image: url('/img/support/Banner2.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+.jumbotron .container{
+    margin-top: 10%;
+}
+.jumbotron .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+}
+#reason {
+    background-color: #b3e1eb;
+}
+
+#diawasi {
+    padding: 4rem 3rem;
+}
+#kontenfooter {
+    background-color: #333333;
+    padding: 2rem 1rem;
+}
+
+

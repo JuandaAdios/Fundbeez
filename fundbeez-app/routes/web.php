@@ -26,15 +26,15 @@ Route::prefix('/')->group(function () {
     });
 
     Route::get('/register', function () {
-        return view('register');
+        return view('pages.customer.register');
     });
 
     Route::get('/login', function () {
-        return view('login');
+        return view('pages.customer.login');
     })->name('login');
 
     Route::get('/emailsent', function () {
-        return view('emailsent');
+        return view('pages.emailsent');
     })->name('emailsent');
 
     Route::post('/login', 'AuthController@login');
@@ -47,12 +47,12 @@ Route::prefix('/')->group(function () {
 // login required
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', function () {
-        return view('home');
+        return view('pages.customer.home');
     });
 
     Route::get('/logout', 'AuthController@logout')->name('logout');
     Route::get('/email/resend', function () {
-        return view('resend_verify');
+        return view('pages.resend_verify');
     });
 
     // 1 trigger in 2 minutes
