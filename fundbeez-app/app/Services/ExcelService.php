@@ -5,6 +5,8 @@ namespace App\Services;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 use PhpOffice\PhpSpreadsheet\Reader\Xls;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx as WriterXlsx;
 use DB;
 use Closure;
 
@@ -84,5 +86,34 @@ class ExcelService
         }
 
         return true;
+    }
+
+    public function get(){
+        $excel = new SpreadSheet();
+        $sheet = $excel->getActiveSheet();
+        $attributes = \Schema::getColumnListing((new $this->model)->getTable());
+        $datas = $this->model::all();
+        $alphabet = range('A', 'Z');
+
+        // set header
+        foreach($attributes as $index => $value){
+            $sheet->setCellValue($alphabet[$index].'1', $value);
+        }
+
+        // body value
+        foreach($datas as $index => $row){
+            $each = $row->toArray();
+            $key = 0;
+            foreach($each as $value){
+                $sheet->setCellValue($alphabet[$key].($index+2), $value);
+                $key++;
+            }
+        }
+
+        $writer = new WriterXlsx($excel);
+        $fileName = 'Export'. time();
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment; filename="'. urlencode($fileName).'.xlsx"');
+        $writer->save('php://output');
     }
 }

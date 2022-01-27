@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // public route
 Route::prefix('/')->group(function () {
     Route::get('/', function () {
-        return redirect()->to(route('home'));
+        return view('pages.customer.register');
     });
 
     Route::get('/register', function () {
@@ -52,14 +52,21 @@ Route::middleware(['auth'])->group(function () {
     // 1 trigger in 2 minutes
     Route::post('/email/verification-notification', 'AuthController@resendVerification')->middleware(['throttle:1,2'])->name('verification.send');
 
-    Route::post('/import', 'InvestmentController@importRegisteredInvestor');
+    Route::post('/import', 'InvestmentController@importRegisteredCompany');
 
-    Route::get('/investment', function () {
-        return view('pages.customer.investment');
+    Route::middleware(['verified'])->group(function () {
+        Route::get('/investment', function () {
+            return view('pages.customer.investment');
+        });
     });
+
     Route::post('/investment', 'InvestmentController@store');
 });
 
-// Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
-//     Route::post('/import', 'InvestationRequestController@importRegisteredInvestor');
-// });
+Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/home', function () {
+        return view('pages.admin.dashboard');
+    });
+    Route::post('/import/company', 'InvestmentController@importRegisteredCompany');
+    Route::get('/export/company', 'InvestmentController@exportRegisteredCompany');
+});

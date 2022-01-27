@@ -12,15 +12,23 @@ use File;
 
 class InvestmentController extends Controller
 {
-    public function importRegisteredInvestor(ImportExcelRequest $request){
+    public function importRegisteredCompany(ImportExcelRequest $request){
         $request->validated();
         $excelService = new ExcelService(Investment::class);
         $update = $excelService->readExcel($request->file('file'))->update();
 
         if(!$update){
-            return back()->withErrors(['errors' => 'Data gagal disimpan!']);
+            // return back()->withErrors(['errors' => 'Data gagal disimpan!']);
+            return 'gagal';
         }
-        return back()->with('message', 'Data berhasil disimpan!');
+        return 'berhasil';
+        // return back()->with('message', 'Data berhasil disimpan!');
+    }
+
+    public function exportRegisteredCompany(Request $request){
+        $excelService = new ExcelService(Investment::class);
+        $excelService->get();
+        return back()->with('message', 'Data berhasil diexport!');
     }
 
     public function store(InvestmentStoreRequest $request){
