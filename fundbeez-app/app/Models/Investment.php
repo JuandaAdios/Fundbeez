@@ -14,6 +14,7 @@ class Investment extends Model
         'company_image',
         'owner_name',
         'owner_image',
+        'company_address',
         'category_id',
         'status',
         'one_year_ago',
@@ -24,6 +25,9 @@ class Investment extends Model
         'needed_fund',
         'video_profile',
         'instagram',
+        'facebook',
+        'linkedin',
+        'company_website',
         'caption',
         'user_id',
     ];

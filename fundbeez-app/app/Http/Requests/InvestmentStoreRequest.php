@@ -37,7 +37,11 @@ class InvestmentStoreRequest extends FormRequest
             'needed_fund' => 'required|numeric',
             'video_profile' => 'sometimes|url',
             'instagram' => 'sometimes',
+            'facebook' => 'sometimes',
+            'company_website' => 'sometimes|url',
+            'linkedin' => 'sometimes',
             'caption' => 'required',
+            'company_address' => 'required'
          ];
     }
 
