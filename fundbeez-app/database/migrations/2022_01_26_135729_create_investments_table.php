@@ -27,8 +27,8 @@ class CreateInvestmentsTable extends Migration
             $table->integer('public_stock');
             $table->bigInteger('profit_prediction');
             $table->bigInteger('needed_fund');
-            $table->string('video_profile');
-            $table->string('instagram');
+            $table->string('video_profile')->nullable();
+            $table->string('instagram')->nullable();
             $table->longText('caption');
             $table->bigInteger('user_id')->references('id')->on('users');
             $table->timestamps();
