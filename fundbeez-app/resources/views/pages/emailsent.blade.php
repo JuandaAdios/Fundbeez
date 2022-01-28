@@ -30,9 +30,9 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Email terkirim !</h5>
-                                <p class="card-text">Kami telah mengirimkan anda email!, silahkan cek email anda dan klik url yang kami kirim untuk sign-in</p>
+                                <p class="card-text">Kami telah mengirimkan anda verifikasi email! silahkan cek email anda dan klik url yang kami kirimkan!</p>
                                 <p class="card-text">tidak terkirim?</p>
-                                <a href="#" class="btn btn-primary">Kirim ulang</a>
+                                <a href="/email/verification-notification" class="btn btn-primary">Kirim ulang</a>
                             </div>
                             <div class="card-footer text-muted">
                                 Fundbeez Investasi | Fundbeez bisnis

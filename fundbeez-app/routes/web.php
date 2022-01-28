@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('daftar_bisnis');
 
     // 1 trigger in 2 minutes
-    Route::post('/email/verification-notification', 'AuthController@resendVerification')->middleware(['throttle:1,2'])->name('verification.send');
+    Route::get('/email/verification-notification', 'AuthController@resendVerification')->middleware(['throttle:1,2'])->name('verification.send');
 
     Route::post('/import', 'InvestmentController@importRegisteredCompany');
 

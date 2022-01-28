@@ -18,11 +18,9 @@ class InvestmentController extends Controller
         $update = $excelService->readExcel($request->file('file'))->update();
 
         if(!$update){
-            // return back()->withErrors(['errors' => 'Data gagal disimpan!']);
-            return 'gagal';
+            return back()->withErrors(['errors' => 'Data gagal disimpan!']);
         }
-        return 'berhasil';
-        // return back()->with('message', 'Data berhasil disimpan!');
+        return back()->with('message', 'Data berhasil disimpan!');
     }
 
     public function exportRegisteredCompany(Request $request){
