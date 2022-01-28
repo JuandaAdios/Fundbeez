@@ -19,8 +19,6 @@ Route::prefix('/')->group(function () {
         return view('pages.customer.home');
     });
 
-    Route::get('/testing/{investment}', 'InvestmentController@show');
-
     Route::get('/register', function () {
         return view('pages.customer.register');
     });
@@ -32,8 +30,6 @@ Route::prefix('/')->group(function () {
     Route::get('/emailsent', function () {
         return view('pages.emailsent');
     })->name('emailsent');
-
-
 
     Route::post('/login', 'AuthController@login');
     Route::post('/register', 'AuthController@register');
@@ -53,9 +49,7 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.emailsent');
     });
 
-    Route::get('/daftar-bisnis', function () {
-        return view('pages.customer.daftar_bisnis');
-    })->name('daftar_bisnis');
+    Route::get('/business-list', 'InvestmentController@showAll')->name('daftar_bisnis');
 
     // 1 trigger in 2 minutes
     Route::get('/email/verification-notification', 'AuthController@resendVerification')->middleware(['throttle:1,2'])->name('verification.send');

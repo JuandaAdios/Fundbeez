@@ -44,58 +44,32 @@
                 </div>
             </div>
                 <div class="row row-cols-3">
+                    @foreach ($data as $data)
                         <div class="card" style="width: 18rem;">
-                            <img src="img/sample/Contoh3.jpg" class="card-img-top" alt="...">
+                            <img src="{{$data->company_image}}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Nama Perusahaan</h5>
-                              <p class="card-text">Deskripsi perusahaan yang dikirim pemilik bisnis.</p>
-                              <div class="card-body">
-                                <a href="#" class="btn btn-primary">Beli</a>
-                              </div>
-                              <div class="card-stats">
-                                <div class="stat">
-                                  <div class="value"><sup>Rp</sup>1000.000</div>
-                                  <div class="type">Harga per lot</div>
+                                <h5 class="card-title">{{$data->company_name}}</h5>
+                                <p class="card-text">{{$data->caption}}</p>
+                                <div class="card-body">
+                                    <a href="{{url('/business/'.$data->id)}}" class="btn btn-primary">Beli</a>
                                 </div>
-                                <div class="stat border">
-                                  <div class="value">4<sup>bulan</sup></div>
-                                  <div class="type">Priode dividen</div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                    <div class="value"><sup>Rp</sup>{{$data->needed_fund / $data->public_stock}}</div>
+                                    <div class="type">Harga per lot</div>
+                                    </div>
+                                    <div class="stat border">
+                                    <div class="value">4<sup>bulan</sup></div>
+                                    <div class="type">dividen</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="value">{{$data->public_stock}}</div>
+                                        <div class="type">Jumlah Lot</div>
+                                    </div>
                                 </div>
-                                <div class="stat">
-                                    <div class="value">5123</div>
-                                    <div class="type">Jumlah Lot</div>
-                                  </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row row-cols-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="img/sample/Contoh3.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Nama Perusahaan</h5>
-                              <p class="card-text">Deskripsi perusahaan yang dikirim pemilik bisnis.</p>
-                              <div class="card-body">
-                                <a href="#" class="btn btn-primary">Beli</a>
-                              </div>
-                              <div class="card-stats">
-                                <div class="stat">
-                                  <div class="value"><sup>Rp</sup>1000.000</div>
-                                  <div class="type">Harga per lot</div>
-                                </div>
-                                <div class="stat border">
-                                  <div class="value">4<sup>bulan</sup></div>
-                                  <div class="type">Priode dividen</div>
-                                </div>
-                                <div class="stat">
-                                    <div class="value">5123</div>
-                                    <div class="type">Jumlah Lot</div>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
+                    @endforeach
     </section>
     <!-- Akhir Daftar Business -->
 

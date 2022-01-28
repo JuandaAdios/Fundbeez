@@ -19,5 +19,6 @@ class EmailIsVerified
         if(!$request->user()->email_verified_at){
             return back()->withErrors(['errors', 'Email not verified!']);
         }
+        return $next($request);
     }
 }

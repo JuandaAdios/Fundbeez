@@ -7,6 +7,7 @@ use App\Services\ExcelService;
 use App\Http\Requests\ImportExcelRequest;
 use App\Http\Requests\InvestmentStoreRequest;
 use App\Models\Investment;
+use App\Models\Enums\InvestmentStatus;
 use DB;
 use File;
 
@@ -60,5 +61,10 @@ class InvestmentController extends Controller
 
     public function show(Request $request, Investment $investment){
         return view('pages.customer.home')->with(['data' => $investment]);
+    }
+
+    public function showAll(Request $request){
+        $data = Investment::where('status', InvestmentStatus::ACCEPT)->get();
+        return view('pages.customer.daftar_bisnis')->with(['data' => $data]);
     }
 }
