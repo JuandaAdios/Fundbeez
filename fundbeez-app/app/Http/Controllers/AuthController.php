@@ -51,7 +51,7 @@ class AuthController extends Controller
             return back()->withInput($data)->withErrors(['errors' => 'Terjadi kesalahan pada server']);
         }
 
-        return redirect('/home');
+        return redirect('/email/resend');
     }
 
     public function logout(Request $request){
@@ -71,6 +71,6 @@ class AuthController extends Controller
     public function resendVerification(Request $request){
         $request->user()->sendEmailVerificationNotification();
 
-        return back()->with(['message' => 'Verification link sent!']);
+        return back()->withErrors(['message' => 'Verification link sent!']);
     }
 }

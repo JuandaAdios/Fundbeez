@@ -40,7 +40,7 @@
                     <h2>{{App\Models\User::count()}}</h2>
                 </div>
                 <div class="col">
-                    <h2>{{App\Models\Investment::count()}}</h2>
+                    <h2>{{App\Models\Investment::where('status', App\Models\Enums\InvestmentStatus::ACCEPT)->count()}}</h2>
                 </div>
                 <div class="col">
                     <h2>0</h2>
@@ -49,7 +49,7 @@
             <div class="row text-center">
                 <div class="col">
                     <h3>Investor Terdaftar</h3>
-                </div> 
+                </div>
                 <div class="col">
                     <h3>Bisnis Terdaftar</h3>
                 </div>
