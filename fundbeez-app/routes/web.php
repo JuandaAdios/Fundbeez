@@ -35,6 +35,8 @@ Route::prefix('/')->group(function () {
     Route::post('/register', 'AuthController@register');
 
     Route::get('/email/verification/{id}/{hash}', 'AuthController@verify')->middleware(['signed', 'auth'])->name('verification.verify');
+
+    Route::get('/business-list', 'InvestmentController@index')->name('daftar_bisnis');
 });
 
 
@@ -48,8 +50,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/email/resend', function () {
         return view('pages.emailsent');
     });
-
-    Route::get('/business-list', 'InvestmentController@showAll')->name('daftar_bisnis');
 
     // 1 trigger in 2 minutes
     Route::get('/email/verification-notification', 'AuthController@resendVerification')->middleware(['throttle:1,2'])->name('verification.send');

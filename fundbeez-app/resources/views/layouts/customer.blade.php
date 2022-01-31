@@ -29,15 +29,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    
+
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home">Beranda</a>
+                        <a class="nav-link <?= request()->is(['/', 'home']) ? 'active' : '' ?>" aria-current="page" href="/">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="daftar-bisnis">Daftar Bisnis</a>
+                        <a class="nav-link <?= request()->is('business-list') ? 'active' : '' ?>" href="/business-list">Daftar Bisnis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ajukan Pendanaan</a>
+                        <a class="nav-link <?= request()->is('investment') ? 'active' : ''?>" href="/investment">Ajukan Pendanaan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled">Investasi</a>
