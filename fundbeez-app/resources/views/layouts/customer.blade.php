@@ -29,12 +29,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    
+
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="daftar-bisnis">Daftar Bisnis</a>
+                        <a class="nav-link" href="business-list">Daftar Bisnis</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Ajukan Pendanaan</a>
@@ -74,7 +74,7 @@
         <div class="container py-4">
             <div class="row row-cols-lg-3">
                 <div class="text-white">
-                    <img src="img/Logo/logoFundbeez-sm.png" width="200rem" />
+                    <img src="img/Logo/logo-white.png" width="200rem" />
                     <h2></h2>
                     <h2 class="font2 fs-3">PT.Fundbeez Indonesia</h2>
                     <h4 class="font1 fs-6">jalan jend. Sudirman blok B.89</h4>

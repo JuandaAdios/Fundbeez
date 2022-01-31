@@ -66,7 +66,7 @@
                     </button>
                 </div>
                 <!--
-                                          <img src="{{ url('img/logo/logoFundbeez-sm.png') }}"/>
+                                          <img src="{{ url('/img/logo/logoFundbeez-sm.png') }}"/>
                                           -->
             </div>
             <div class="panel right-panel">

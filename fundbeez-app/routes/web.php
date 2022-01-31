@@ -44,10 +44,15 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.customer.home');
     })->name('home');
 
+
     Route::get('/logout', 'AuthController@logout')->name('logout');
     Route::get('/email/resend', function () {
         return view('pages.emailsent');
     });
+
+    Route::get('/detail-business', function () {
+        return view('pages.customer.detail_business');
+    })->name('detail_business');
 
     Route::get('/business-list', 'InvestmentController@showAll')->name('daftar_bisnis');
 
