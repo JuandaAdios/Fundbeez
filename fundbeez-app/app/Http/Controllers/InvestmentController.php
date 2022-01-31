@@ -63,7 +63,7 @@ class InvestmentController extends Controller
         return view('pages.customer.home')->with(['data' => $investment]);
     }
 
-    public function showAll(Request $request){
+    public function index(Request $request){
         $data = Investment::where('status', InvestmentStatus::ACCEPT)->get();
         return view('pages.customer.daftar_bisnis')->with(['data' => $data]);
     }
