@@ -96,25 +96,23 @@ class ExcelService
         $excel = new SpreadSheet();
         $sheet = $excel->getActiveSheet();
         $datas = $this->model::all();
-        $alphabet = range('A', 'Z');
+        $alphabet = 'A';
 
         // set header
         foreach($this->attributes as $index => $value){
-            $sheet->setCellValue($alphabet[$index].'1', $value);
+            $sheet->setCellValue(($alphabet++).'1', $value);
         }
 
         // body value
         foreach($datas as $index => $row){
             $each = $row->toArray();
-            $key = 0;
             foreach($each as $value){
-                $sheet->setCellValue($alphabet[$key].($index+2), $value);
-                $key++;
+                $sheet->setCellValue(($alphabet++).($index+2), $value);
             }
         }
 
         $writer = new WriterXlsx($excel);
-        $fileName = 'Export'. time();
+        $fileName = 'Export'. date('Y-m-d h-i-s');
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment; filename="'. urlencode($fileName).'.xlsx"');
         $writer->save('php://output');
