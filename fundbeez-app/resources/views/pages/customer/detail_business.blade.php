@@ -17,11 +17,11 @@
        </div>
        <div class="row fs-5 pt-5">
            <div class="col pt-5">
-            <img src="img/sample/Contoh1.jpg" alt="nama perusahaan" width="500">
+            <img src="{{$data['company_image']}}" alt="nama perusahaan" width="500">
                </div>
            <div class="col pt-5">
-               <h1>Nama perusahaan</h1>
-               <button type="button" class="btn btn-outline-secondary">Category</button>
+               <h1>{{$data['company_name']}}</h1>
+               <button type="button" class="btn btn-outline-secondary">{{$data->investment_category()->value('name')}}</button>
                <h3>Fundbeez Paylater</h3>
                <p>Rp.1000.000 - Rp.3000.000.000</p>
                <div class="progress">
@@ -34,18 +34,22 @@
                   <div class="row fs-5">
                     <div class="col">
                         <h5>Harga perlot</h5>
-                        <p>1.000.000</p>
+                        <p>@if($data['amount_per_lot'] > 0){{$data['amount_per_lot']}} @else Coming Soon @endif</p>
 
                         <h5>Periode Deviden</h5>
-                        <p>6 Bulan</p>
+                        @if($data['dividen_period'] > 0)
+                            <p>{{floor($data['dividen_period']/12)}} tahun @if($data['dividen_period'] % 12 > 0) {{$data['dividen_period'] % 12}} bulan @endif</p>
+                        @else
+                            <p> Coming Soon </p>
+                        @endif
                         <button type="button" class="btn btn-primary">Beli</button>
                     </div>
                     <div class="col">
                         <h5>Jumlah Lot</h5>
-                        <p>8000</p>
+                        <p>{{$data['public_stock']}}</p>
 
                         <h5>Estimasi Deviden</h5>
-                        <p>1 Tahun</p>
+                        <p>{{$data['dividen']}}%</p>
                         <button type="button" class="btn btn-warning">Pay Later</button>
                     </div>
                   </div>
@@ -65,28 +69,28 @@
         <div class="row pt-2">
             <div class="col">
                 <p class="h6">Dana Yang dibutuhkan</p>
-                <p class="h6">Omzet 2021</p>
-                <p class="h6">Omzet 2020</p>
+                <p class="h6">Omzet {{date('Y', strtotime($data['created_at'])) - 1}}</p>
+                <p class="h6">Omzet {{date('Y', strtotime($data['created_at'])) - 2}}</p>
                 <p class="h6">Jumlah Saham Untuk Umum</p>
 
             </div>
             <div class="col">
-                <p class="h6">Rp.1.000.000</p>
-                <p class="h6">Rp.500.000.000</p>
-                <p class="h6">Rp.650.000.000</p>
-                <p class="h6">8000 Lots</p>
+                <p class="h6">Rp.{{ number_format($data['needed_fund'], '2',',', '.') }}</p>
+                <p class="h6">Rp.{{ number_format($data['two_year_ago'], '2',',', '.') }}</p>
+                <p class="h6">Rp.{{ number_format($data['one_year_ago'], '2',',', '.') }}</p>
+                <p class="h6">{{ number_format($data['public_stock']) }} Lots</p>
             </div>
         </div>
         </div>
         <div class="col text-center">
-            <img src="img/sample/Avatar1.png" alt="nama perusahaan" width="200" class="rounded-circle">
+            <img src="{{$data['owner_image']}}" alt="nama perusahaan" width="200" class="rounded-circle">
             <h4>Nama Owner</h4>
-            <p>Pemilik Bisnis</p>
+            <p>{{$data['owner_name']}}</p>
         </div>
     </div>
     <div class="row-9 pt-5">
         <h2>Tentang Perusahaan</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab architecto repellat alias, voluptatum nihil ad sed corrupti veniam id ipsa a quo, accusantium in vel dolorem? Tenetur optio ipsam recusandae!</p>
+        <p>{{$data['caption']}}</p>
     </div>
     <div class="row-9 pt-5 pb-5">
         <h2>Sosial Media Perusahaan</h2>

@@ -35,10 +35,10 @@ class InvestmentStoreRequest extends FormRequest
             'public_stock' => 'required|integer',
             'profit_prediction' => 'required|numeric',
             'needed_fund' => 'required|numeric',
-            'video_profile' => 'sometimes|url',
+            'video_profile' => 'nullable|url',
             'instagram' => 'sometimes',
             'facebook' => 'sometimes',
-            'company_website' => 'sometimes|url',
+            'company_website' => 'nullable|url',
             'linkedin' => 'sometimes',
             'caption' => 'required',
             'company_address' => 'required'

@@ -36,4 +36,8 @@ class Investment extends Model
         'created_at' => 'datetime:Y-m-d',
         'updated_at' => 'datetime:Y-m-d',
     ];
+
+    public function investment_category(){
+        return $this->belongsTo(InvestmentCategory::class, 'category_id');
+    }
 }
