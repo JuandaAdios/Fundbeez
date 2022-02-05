@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow-lg fixed-top" style="background-color: #ffff">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="img/logo/logoFundbeez-sm.png" alt="" width="200" />
+                <img src="{{ asset('img/logo/logoFundbeez-sm.png') }}" alt="" width="200" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,13 +31,13 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home">Beranda</a>
+                        <a class="nav-link @if (request()->is(['/', 'home'])) active @endif" aria-current="page" href="home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="business-list">Daftar Bisnis</a>
+                        <a class="nav-link @if (request()->is('business-list')) active @endif" href="business-list">Daftar Bisnis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ajukan Pendanaan</a>
+                        <a class="nav-link @if (request()->is('investment')) active @endif" href="investment">Ajukan Pendanaan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled">Investasi</a>
@@ -74,7 +74,7 @@
         <div class="container py-4">
             <div class="row row-cols-lg-3">
                 <div class="text-white">
-                    <img src="img/Logo/logo-white.png" width="200rem" />
+                    <img src="{{ asset('img/Logo/logo-white.png') }}" width="200rem" />
                     <h2></h2>
                     <h2 class="font2 fs-3">PT.Fundbeez Indonesia</h2>
                     <h4 class="font1 fs-6">jalan jend. Sudirman blok B.89</h4>

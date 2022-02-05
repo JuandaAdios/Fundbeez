@@ -1,7 +1,7 @@
 @extends('layouts.customer')
 
 @section('title', 'Fundbeez')
-<link rel="icon" href="{!! asset('img/logo/icon-fundbeez.png') !!}"/>
+<link rel="icon" href="{!! asset('img/logo/icon-fundbeez.png') !!}" />
 
 @section('custome-css')
     <link rel="stylesheet" href="{{ asset('css/customer_home.css') }}" />
@@ -22,8 +22,8 @@
                 Crowdfunding <br>
                 Di Indonesia</h1>
             <p class="lead" style="color: aliceblue">Investasi dan kembangkan bisnismu sekarang dengan Fundbeez</p>
-            <a class="btn btn-lg rounded-pill" href="#" role="button" style="background-color: #ffd600">Ajukan Pendanaan</a>
-            <a class="btn btn-lg rounded-pill" href="#" role="button" style="background-color: #0098ba">Daftar Sebagai Investor</a>
+            <a class="btn btn-lg rounded-pill" href="/investment" role="button" style="background-color: #ffd600">Ajukan Pendanaan</a>
+            <a class="btn btn-lg rounded-pill" style="background-color: #0098ba">Daftar Sebagai Investor</a>
         </div>
 
         <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -37,10 +37,10 @@
         <div class="container rounded-pill shadow-lg" style="background-color: #ffff">
             <div class="row text-center">
                 <div class="col">
-                    <h2>{{App\Models\User::count()}}</h2>
+                    <h2>{{ App\Models\User::count() }}</h2>
                 </div>
                 <div class="col">
-                    <h2>{{App\Models\Investment::where('status', App\Models\Enums\InvestmentStatus::ACCEPT)->count()}}</h2>
+                    <h2>{{ App\Models\Investment::where('status', App\Models\Enums\InvestmentStatus::ACCEPT)->count() }}</h2>
                 </div>
                 <div class="col">
                     <h2>0</h2>
@@ -109,7 +109,7 @@
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="img/sample/Contoh2.jpg" class="card-img-top" alt="..." />
+                        <img src="{{ asset('/img/sample/Contoh2.jpg') }}" class=" card-img-top" alt="..." />
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>

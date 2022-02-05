@@ -74,17 +74,17 @@
             <div class="row text-center">
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="img/Aman.png" class="card-img-top" alt="aman" />
+                        <img src="{{ asset('img/Aman.png') }}" class="card-img-top" alt="aman" />
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="img/Profitable.png" class="card-img-top" alt="Profitable" />
+                        <img src="{{ asset('img/Profitable.png') }}" class="card-img-top" alt="Profitable" />
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="img/Paylater.png" class="card-img-top" alt="paylater" />
+                        <img src="{{ asset('img/Paylater.png') }}" class="card-img-top" alt="paylater" />
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="img/sample/Contoh2.jpg" class="card-img-top" alt="..." />
+                        <img src="{{ asset('/img/sample/Contoh2.jpg') }}" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="img/sample/Contoh3.jpg" class="card-img-top" alt="..." />
+                        <img src="{{ asset('img/sample/Contoh3.jpg') }}" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
@@ -123,7 +123,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="img/sample/Contoh4.jpg" class="card-img-top" alt="..." />
+                        <img src="{{ asset('img/sample/Contoh4.jpg') }}" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
@@ -149,7 +149,7 @@
             <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4">
-                    <img src="img/support/OJK.png" class="card-img-top" alt="contoh1" />
+                    <img src="{{ asset('img/support/OJK.png') }}" class="card-img-top" alt="contoh1" />
                 </div>
                 <div class="col-4"></div>
             </div>
@@ -166,7 +166,7 @@
                     <hr class="my-3" style="background-color: #0098ba" />
                 </div>
             </div>
-            <div class="row"><img src="img/support/Sponsor.png" /></div>
+            <div class="row"><img src="{{ asset('img/support/Sponsor.png') }}" /></div>
         </div>
     </section>
     <!-- akhir didukung -->
@@ -174,27 +174,27 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form method="post" enctype="multipart/form-data" action="{{url('/admin/import/company')}}">
-                @csrf
-                <div class="mb-3">
-                  <label for="recipient-name" class="col-form-label">Data Company (excel):</label>
-                  <input type="file" class="form-control" id="file" name="file">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                    <form method="post" enctype="multipart/form-data" action="{{ url('/admin/import/company') }}">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Data Company (excel):</label>
+                            <input type="file" class="form-control" id="file" name="file">
+                        </div>
 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Upload Data!</button>
+                </div>
+                </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Upload Data!</button>
-            </div>
-        </form>
-          </div>
         </div>
-      </div>
+    </div>
 
 @endsection

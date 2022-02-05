@@ -1,7 +1,7 @@
 @extends('layouts.customer')
 
 @section('title', 'Fundbeez')
-<link rel="icon" href="{!! asset('img/logo/icon-fundbeez.png') !!}"/>
+<link rel="icon" href="{!! asset('img/logo/icon-fundbeez.png') !!}" />
 
 @section('custome-css')
     <link rel="stylesheet" href="{{ asset('css/daftarInvestasi.css') }}" />
@@ -9,21 +9,17 @@
 @endsection
 
 @section('content')
-
-
-    <!-- Akhir Navbar -->
-
     <!-- jumbotron -->
     <section class="jumbotron text-start jumbotron-light">
         <div class="container">
-            <h1 class="display-6 fw-bold" style="color: black">
-                Daftar  <br>
+            <h1 class="display-6 fw-bold">
+                Daftar <br>
                 Usaha yang bagus <br>
                 untuk Investasi <br>
                 Di Indonesia</h1>
             <p class="lead" style="color: black">Cari bisnis yang potensial pilihan kami, untuk investasi tabungan masa depan anda</p>
-            <a class="btn btn-lg rounded-pill" href="#" role="button" style="background-color: #ffd600">Ajukan Pendanaan</a>
-            <a class="btn btn-lg rounded-pill" href="#" role="button" style="background-color: #0098ba" style="color: aliceblue">Daftar Sebagai Investor</a>
+            <a class="btn btn-lg rounded-pill" href="/investment" style="background-color: #ffd600">Ajukan Pendanaan</a>
+            <button class="btn btn-lg rounded-pill" style="background-color: #0098ba" style="color: aliceblue">Daftar Sebagai Investor</button>
 
             <div class="vector">
                 <img src="img/vector/vector2.png">
@@ -37,39 +33,33 @@
     <!-- Daftar Business -->
     <section id="daftarbisnis">
         <div class="container">
-            <div class="row text-center">
-                <div class="col">
-                    <h2>Daftar Bisnis</h2>
-                    <hr class="my-3" style="background-color: #0098ba" />
-                </div>
+            <div class="text-center">
+                <h2>Daftar Bisnis</h2>
             </div>
-                <div class="row row-cols-3">
-                    @foreach ($data as $data)
-                        <div class="card" style="width: 18rem;">
-                            <img src="{{$data->company_image}}" class="card-img-top" alt="...">
+            <hr class="mt-2 mb-4 mx-auto" width="80px" style="background-color: #0098ba" />
+            <div class="row row-cols-3">
+                @foreach ($data as $value)
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ $value->company_image }}" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">{{$data->company_name}}</h5>
-                                <p class="card-text">{{$data->caption}}</p>
-                                <div class="card-body">
-                                    <a href="{{url('/business/'.$data->id)}}" class="btn btn-primary">Beli</a>
+                                <span class="chip">{{ $value->investment_category->name }}</span>
+                                <div class="my-3">
+                                    <h3 class="card-title">{{ $value->company_name }}</h3>
+                                    <p>{{ Illuminate\Support\Str::limit($value->caption, 50, '...') }}</p>
                                 </div>
-                                <div class="card-stats">
-                                    <div class="stat">
-                                    <div class="value"><sup>Rp</sup>{{$data->needed_fund / $data->public_stock}}</div>
-                                    <div class="type">Harga per lot</div>
-                                    </div>
-                                    <div class="stat border">
-                                    <div class="value">4<sup>bulan</sup></div>
-                                    <div class="type">dividen</div>
-                                    </div>
-                                    <div class="stat">
-                                        <div class="value">{{$data->public_stock}}</div>
-                                        <div class="type">Jumlah Lot</div>
-                                    </div>
-                                </div>
+
+                                <a href="{{ url('/business/' . $value->id) }}">
+                                    <button class="btn w-100">
+                                        View Detail
+                                    </button>
+                                </a>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </section>
     <!-- Akhir Daftar Business -->
 
