@@ -23,7 +23,7 @@
                 Di Indonesia</h1>
             <p class="lead" style="color: aliceblue">Investasi dan kembangkan bisnismu sekarang dengan Fundbeez</p>
             <a class="btn btn-lg rounded-pill" href="/investment" role="button" style="background-color: #ffd600">Ajukan Pendanaan</a>
-            <a class="btn btn-lg rounded-pill" style="background-color: #0098ba">Daftar Sebagai Investor</a>
+            <a class="btn btn-lg rounded-pill text-white" href="/investor/add" style="background-color: #0098ba">Daftar Sebagai Investor</a>
         </div>
 
         <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -44,6 +44,7 @@
                 </div>
                 <div class="col">
                     <h2>0</h2>
+
                 </div>
             </div>
             <div class="row text-center">
@@ -66,13 +67,8 @@
 
     <!-- Reason -->
     <section id="reason">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col">
-                    <h2 class="display-6 fw-bold">Mengapa Memilih Fundbeez?</h2>
-                    <hr class="my-3" style="background-color: #0098ba" />
-                </div>
-            </div>
+        <div class="container" style="margin-bottom: 50px">
+            <h2 class="display-6 mb-4 fw-bold text-center">Mengapa Memilih Fundbeez?</h2>
             <div class="row text-center">
                 <div class="col-md-4 mb-3">
                     <div class="card">
@@ -98,15 +94,11 @@
     <!-- Akhir Reason -->
 
     <!-- Daftar Business -->
-    <section id="daftarbisnis">
+    <section id="daftarbisnis" style="padding: 0 0 100px 0">
         <div class="container">
-            <div class="row text-center">
-                <div class="col">
-                    <h2>Daftar Bisnis</h2>
-                    <hr class="my-3" style="background-color: #0098ba" />
-                </div>
-            </div>
-            <div class="row">
+            <h2 class="text-center">Daftar Bisnis</h2>
+            <hr class="section-devider" />
+            <div class="row" style="margin:50px 0">
                 <div class="col-md-4 mb-3">
                     <div class="card">
                         <img src="{{ asset('/img/sample/Contoh2.jpg') }}" class=" card-img-top" alt="..." />
@@ -132,22 +124,18 @@
                     </div>
                 </div>
             </div>
-            <div class="row text-center">
-                <a class="btn btn-lg rounded-pill" href="daftar-bisnis" role="button" style="background-color: #86cddd">Tampilkan Bisnis Lainnya</a>
+            <div class="text-center">
+                <a class="btn btn-lg rounded-pill text-white" href="/business-list" role="button" style="background-color: #86cddd">Tampilkan Bisnis Lainnya</a>
             </div>
         </div>
     </section>
     <!-- Akhir Daftar Business -->
 
     <!-- Diawasi oleh -->
-    <section id="diawasi">
+    <section id="diawasi" style="padding: 100px 0">
         <div class="container">
-            <div class="row text-center">
-                <div class="col">
-                    <h2>Diawasi Oleh</h2>
-                    <hr class="my-3" style="background-color: #0098ba" />
-                </div>
-            </div>
+            <h2 class="text-center">Diawasi Oleh</h2>
+            <hr class="section-devider" />
             <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4">
@@ -160,14 +148,10 @@
     <!-- akhir diawasi oleh -->
 
     <!-- Didukung -->
-    <section id="didukung">
+    <section id="didukung" style="padding: 100px 0">
         <div class="container">
-            <div class="row text-center">
-                <div class="col">
-                    <h2>Di Dukung Oleh</h2>
-                    <hr class="my-3" style="background-color: #0098ba" />
-                </div>
-            </div>
+            <h2 class="text-center">Di Dukung Oleh</h2>
+            <hr class="section-devider" />
             <div class="row"><img src="img/support/Sponsor.png" /></div>
         </div>
     </section>

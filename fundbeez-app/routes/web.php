@@ -34,8 +34,12 @@ Route::prefix('/')->group(function () {
     Route::post('/login', 'AuthController@login');
     Route::post('/register', 'AuthController@register');
 
-    Route::get('/business/{investment}', 'InvestmentController@show')->name('detail_business');
-    Route::get('/business-list', 'InvestmentController@index')->name('daftar_bisnis');
+    Route::get('/business/{investment}', 'InvestmentController@show')->name('business_detail');
+    Route::get('/business-list', 'InvestmentController@index')->name('business_list');
+
+    Route::get('/investor/add', function () {
+        return view('pages.coming_soon');
+    })->name('investor_add');
 
     Route::get('/email/verification/{id}/{hash}', 'AuthController@verify')->middleware(['signed', 'auth'])->name('verification.verify');
 });
@@ -60,7 +64,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware(['verified'])->group(function () {
         Route::get('/investment', function () {
-            return view('pages.customer.investment');
+            return view('pages.customer.investment.investment_add');
         });
     });
 

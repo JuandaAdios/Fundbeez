@@ -18,6 +18,9 @@
     left: 0;
     width: 100vw;
 }
+#reason .card{
+    border-radius: 16px;
+}
 #reason {
     background-color: #b3e1eb;
 }
@@ -25,9 +28,6 @@
 #diawasi {
     padding: 4rem 3rem;
 }
-#kontenfooter {
-    background-color: #333333;
-    padding: 2rem 1rem;
-}
+
 
 
