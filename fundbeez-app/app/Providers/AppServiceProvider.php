@@ -32,9 +32,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->setVerificationMailingTemplate();
-        Route::bind('business', function ($value) {
-            return Investment::where(['id' => $value, 'status' => InvestmentStatus::ACCEPT])->firstOrFail();
-        });
     }
 
     private function setVerificationMailingTemplate()
