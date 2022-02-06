@@ -31,7 +31,7 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link @if (request()->is(['/', 'home'])) active @endif" aria-current="page" href="home">Beranda</a>
+                        <a class="nav-link @if (request()->is(['/', 'home'])) active @endif" aria-current="page" href="/">Beranda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link @if (request()->is('business-list')) active @endif" href="business-list">Daftar Bisnis</a>
