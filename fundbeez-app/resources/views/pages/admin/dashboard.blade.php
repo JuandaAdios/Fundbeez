@@ -26,7 +26,7 @@
     <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
         <div class="sidenav-header">
             <a class="navbar-brand mx-auto" href="#" target="_blank">
-                <img src="/img/Logo/fundbeez.png" class="navbar-brand-img h-100" style="max-height: none" alt="main_logo">
+                <img src="/img/Logo/fundbeez.png" class="navbar-brand-img h-100" style="max-height: 40px" alt="main_logo">
             </a>
         </div>
         <hr class="horizontal dark mt-0">
