@@ -34,7 +34,7 @@ class InvestmentStoreRequest extends FormRequest
             'dividen' => 'required|numeric|between:1,100',
             'public_stock' => 'required|integer',
             'profit_prediction' => 'required|numeric',
-            'needed_fund' => 'required|numeric',
+            'needed_fund' => 'required|numeric|min:1000000',
             'video_profile' => 'nullable|url',
             'instagram' => 'sometimes',
             'facebook' => 'sometimes',
