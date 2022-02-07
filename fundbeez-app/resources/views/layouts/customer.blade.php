@@ -63,7 +63,9 @@
                             <li>
                                 <p class="px-3 fw-bold" style="color:#525252"> {{ Auth::guard('web')->user()->name }}</p>
                             </li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-fw fa-cogs"></i> Setting</a></li>
+                            @if (Auth::guard('web')->user()->role->name == 'admin')
+                                <li><a class="dropdown-item" href="/admin/dashboard"><i class="fas fa-fw fa-cogs"></i> Dashboard</a></li>
+                            @endif
                             <hr>
                             <li><a class="dropdown-item" href="/logout"><i class="fas fa-fw fa-sign-out-alt"></i> Logout</a></li>
                         </ul>
@@ -92,10 +94,10 @@
                         <h4 class="font1 fs-6">Jl. Jend. Sudirman blok B.89</h4>
                     </div>
                     <div class="text-white">
-                        <p class="fs-4 fw-bold"><a href="#" class="text-reset">Karir</a></p>
-                        <p class="fs-4 fw-bold"><a href="#" class="text-reset">Syarat dan Ketentuan</a></p>
-                        <p class="fs-4 fw-bold"><a href="#" class="text-reset">Hubungi Kami</a></p>
-                        <p class="fs-4 fw-bold"><a href="#" class="text-reset">Tentang Fundbeez</a></p>
+                        <p class="fs-4 "><a href="#" class="text-reset">Karir</a></p>
+                        <p class="fs-4 "><a href="#" class="text-reset">Syarat dan Ketentuan</a></p>
+                        <p class="fs-4 "><a href="#" class="text-reset">Hubungi Kami</a></p>
+                        <p class="fs-4 "><a href="#" class="text-reset">Tentang Fundbeez</a></p>
                     </div>
                     <div class="text-white">
                         <p class="fs-5"><i class="fas fa-phone-alt"></i> 0877-9117-4370</p>
@@ -107,7 +109,7 @@
 
         <!-- footer -->
         <div class="text-white text-center p-3" style="background-color: #333333">
-            <p>Created with love by <a href="https://www.instagram.com/juandaadios/" class="text-white fw-bold">Frilyan Juanda Adios</a></p>
+            <p>© Copyright, all right reserved @ <a href="https://www.instagram.com/fundbeez/" class="text-white fw-bold">Fundbeez.com</a></p>
         </div>
     </footer>
 
