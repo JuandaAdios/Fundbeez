@@ -61,7 +61,7 @@ class InvestmentController extends Controller
             File::delete($companyImagePath);
             return back()->withInput()->withErrors(['errors' => 'Gagal menyimpan investasi!']);
         }
-        return redirect('/home')->with('messages', 'Berhasil mengajukan pendanaan. Perdanaan akan diproses');
+        return back()->with('messages', 'Berhasil mengajukan pendanaan. Perdanaan akan diproses');
     }
 
     public function show(Request $request, Investment $investment)
