@@ -63,7 +63,9 @@
                             <li>
                                 <p class="px-3 fw-bold" style="color:#525252"> {{ Auth::guard('web')->user()->name }}</p>
                             </li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-fw fa-cogs"></i> Setting</a></li>
+                            @if (Auth::guard('web')->user()->role->name == 'admin')
+                                <li><a class="dropdown-item" href="/admin/dashboard"><i class="fas fa-fw fa-cogs"></i> Dashboard</a></li>
+                            @endif
                             <hr>
                             <li><a class="dropdown-item" href="/logout"><i class="fas fa-fw fa-sign-out-alt"></i> Logout</a></li>
                         </ul>
