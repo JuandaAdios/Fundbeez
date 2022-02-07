@@ -26,6 +26,9 @@ Route::prefix('/')->group(function () {
     Route::get('/login', function () {
         return view('pages.customer.auth.login');
     })->name('login');
+    Route::get('/testdashboard', function () {
+        return view('layouts.admin');
+    })->name('testdashboard');
 
     Route::get('/email-resend', function () {
         return view('pages.email_resend');
