@@ -26,6 +26,9 @@ Route::prefix('/')->group(function () {
     Route::get('/login', function () {
         return view('pages.customer.auth.login');
     })->name('login');
+    Route::get('/testdashboard', function () {
+        return view('layouts.admin');
+    })->name('testdashboard');
 
     Route::get('/email-resend', function () {
         return view('pages.email_resend');
@@ -72,7 +75,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/home', function () {
+    Route::get('/dashboard', function () {
         return view('pages.admin.dashboard');
     });
     Route::post('/import/company', 'InvestmentController@importRegisteredCompany');

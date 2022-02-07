@@ -21,7 +21,7 @@ class AuthController extends Controller
         }
 
         if (auth()->user()->role->name == 'admin') {
-            return redirect('/admin/home');
+            return redirect('/admin/dashboard');
         } else {
             return redirect('/home');
         }
