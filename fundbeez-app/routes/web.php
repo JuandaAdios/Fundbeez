@@ -20,16 +20,16 @@ Route::prefix('/')->group(function () {
     });
 
     Route::get('/register', function () {
-        return view('pages.customer.register');
+        return view('pages.customer.auth.register');
     });
 
     Route::get('/login', function () {
-        return view('pages.customer.login');
+        return view('pages.customer.auth.login');
     })->name('login');
 
-    Route::get('/emailsent', function () {
-        return view('pages.emailsent');
-    })->name('emailsent');
+    Route::get('/email-resend', function () {
+        return view('pages.email_resend');
+    })->name('email_resend');
 
     Route::post('/login', 'AuthController@login');
     Route::post('/register', 'AuthController@register');
@@ -53,8 +53,8 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/logout', 'AuthController@logout')->name('logout');
-    Route::get('/email/resend', function () {
-        return view('pages.emailsent');
+    Route::get('/email/verification', function () {
+        return view('pages.email_verification');
     });
 
     // 1 trigger in 2 minutes

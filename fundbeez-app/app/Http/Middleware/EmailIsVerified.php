@@ -16,8 +16,8 @@ class EmailIsVerified
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!$request->user()->email_verified_at){
-            return back()->withErrors(['errors', 'Email not verified!']);
+        if (!$request->user()->email_verified_at) {
+            return redirect('/email/verification');
         }
         return $next($request);
     }

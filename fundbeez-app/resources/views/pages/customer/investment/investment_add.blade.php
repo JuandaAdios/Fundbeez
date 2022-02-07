@@ -221,22 +221,8 @@
                     }
                 </script>
 
-
-
-                {{-- <form method="post" action="{{ url('investment') }}" class="sign-in-form" enctype="multipart/form-data">
-                    @csrf
-                    <h1 class="title">Ajukan Investasi</h1>
-
-
-                    <input type="submit" value="Invest!" class="btn btn-primary " />
-                    @foreach ($errors->all() as $error)
-                        <div>{{ $error }}</div>
-                    @endforeach
-                </form> --}}
             </div>
         </form>
-        @foreach ($errors->all() as $error)
-            <div>{{ $error }}</div>
-        @endforeach
+
     </main>
 @endsection
