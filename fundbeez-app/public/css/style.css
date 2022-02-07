@@ -1,1 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+.section-devider{
+    margin: 5px auto;
+    margin-bottom: 20px;
+    background-color: #0098ba;
+    width: 80px;
+    padding: 3px;
+    border-radius: 20px;
+}
+

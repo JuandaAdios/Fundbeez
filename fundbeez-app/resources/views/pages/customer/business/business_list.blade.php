@@ -19,7 +19,7 @@
                 Di Indonesia</h1>
             <p class="lead" style="color: black">Cari bisnis yang potensial pilihan kami, untuk investasi tabungan masa depan anda</p>
             <a class="btn btn-lg rounded-pill" href="/investment" style="background-color: #ffd600">Ajukan Pendanaan</a>
-            <button class="btn btn-lg rounded-pill" style="background-color: #0098ba" style="color: aliceblue">Daftar Sebagai Investor</button>
+            <button class="btn btn-lg rounded-pill text-white" style="background-color: #0098ba" style="color: aliceblue">Daftar Sebagai Investor</button>
 
             <div class="vector">
                 <img src="img/vector/vector2.png">
@@ -36,7 +36,7 @@
             <div class="text-center">
                 <h2>Daftar Bisnis</h2>
             </div>
-            <hr class="mt-2 mb-4 mx-auto" width="80px" style="background-color: #0098ba" />
+            <hr class="section-devider" />
             <div class="row row-cols-3">
                 @foreach ($data as $value)
                     <div class="col">
@@ -46,7 +46,7 @@
                                 <span class="chip">{{ $value->investment_category->name }}</span>
                                 <div class="my-3">
                                     <h3 class="card-title">{{ $value->company_name }}</h3>
-                                    <p>{{ Illuminate\Support\Str::limit($value->caption, 50, '...') }}</p>
+                                    <p>{{ Illuminate\Support\Str::limit($value->caption, 80, '...') }}</p>
                                 </div>
 
                                 <a href="{{ url('/business/' . $value->id) }}">

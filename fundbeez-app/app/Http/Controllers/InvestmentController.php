@@ -64,15 +64,15 @@ class InvestmentController extends Controller
 
     public function show(Request $request, Investment $investment)
     {
-        if($investment->status != InvestmentStatus::ACCEPT){
+        if ($investment->status != InvestmentStatus::ACCEPT) {
             return abort(404);
         }
-        return view('pages.customer.detail_business')->with(['data' => $investment]);
+        return view('pages.customer.business.business_detail')->with(['data' => $investment]);
     }
 
     public function index(Request $request)
     {
         $data = Investment::where('status', InvestmentStatus::ACCEPT)->get();
-        return view('pages.customer.daftar_bisnis')->with(['data' => $data]);
+        return view('pages.customer.business.business_list')->with(['data' => $data]);
     }
 }

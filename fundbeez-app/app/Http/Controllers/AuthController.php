@@ -17,21 +17,22 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (!Auth::attempt($credentials)) {
             // Authentication failed...
-           return back()->withInput(['email' => $credentials['email']])->withErrors(['errors' => 'Email atau password salah!']);
+            return back()->withInput(['email' => $credentials['email']])->withErrors(['errors' => 'Email atau password salah!']);
         }
 
-        if(auth()->user()->role->name == 'admin'){
+        if (auth()->user()->role->name == 'admin') {
             return redirect('/admin/home');
-        }else{
+        } else {
             return redirect('/home');
         }
     }
 
-    public function register(RegisterRequest $request){
+    public function register(RegisterRequest $request)
+    {
         $data = $request->validated();
 
         DB::beginTransaction();
-        try{
+        try {
             // create user
             $user = new User;
             $user->fill($data);
@@ -46,15 +47,16 @@ class AuthController extends Controller
             $user->sendEmailVerificationNotification();
 
             DB::commit();
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             DB::rollback();
             return back()->withInput($data)->withErrors(['errors' => 'Terjadi kesalahan pada server']);
         }
 
-        return redirect('/email/resend');
+        return redirect('/email/verification');
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
@@ -62,13 +64,15 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
-    public function verify(EmailVerificationRequest $request){
+    public function verify(EmailVerificationRequest $request)
+    {
         $request->fulfill();
 
         return redirect('/home');
     }
 
-    public function resendVerification(Request $request){
+    public function resendVerification(Request $request)
+    {
         $request->user()->sendEmailVerificationNotification();
 
         return back()->withErrors(['message' => 'Verification link sent!']);

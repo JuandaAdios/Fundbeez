@@ -104,11 +104,11 @@
                 </div>
                 <div class="row-9 pt-5 pb-5">
                     <h2>Sosial Media Perusahaan</h2>
-                    <a class="btn btn-primary" style="background-color: #0042a5;" href="#!" role="button">
+                    <a class="btn text-white" style="background-color: #0042a5;" href="#!" role="button">
                         <i class="fab fa-facebook me-2"></i>Facebook</a>
-                    <a class="btn btn-primary" style="background-color: #ac2bac;" href="#!" role="button">
+                    <a class="btn text-white" style="background-color: #ac2bac;" href="#!" role="button">
                         <i class="fab fa-instagram me-2"></i>Instagram</a>
-                    <a class="btn btn-primary" style="background-color: #078bf7;" href="#!" role="button">
+                    <a class="btn text-white" style="background-color: #078bf7;" href="#!" role="button">
                         <i class="fab fa-linkedin me-2"></i>Linkedin</a>
 
                 </div>
