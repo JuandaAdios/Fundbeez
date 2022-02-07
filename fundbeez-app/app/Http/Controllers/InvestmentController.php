@@ -28,7 +28,9 @@ class InvestmentController extends Controller
     public function exportRegisteredCompany(Request $request)
     {
         $excelService = new ExcelService(Investment::class);
-        $excelService->get();
+        $excelService->get(function($query){
+            return $query->where('status', InvestmentStatus::PENDING);
+        });
         return back()->with('message', 'Data berhasil diexport!');
     }
 
