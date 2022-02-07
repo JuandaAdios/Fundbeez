@@ -103,6 +103,7 @@ class ExcelService
             $sheet->setCellValue(($alphabet++).'1', $value);
         }
 
+        $alphabet = 'A';
         // body value
         foreach($datas as $index => $row){
             $each = $row->toArray();
