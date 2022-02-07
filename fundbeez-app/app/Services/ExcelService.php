@@ -92,11 +92,15 @@ class ExcelService
         return true;
     }
 
-    public function get(){
+    public function get(Closure $condition = null){
         $excel = new SpreadSheet();
         $sheet = $excel->getActiveSheet();
-        $datas = $this->model::all();
+        $datas = $this->model::query();
         $alphabet = 'A';
+
+        if($condition != null){
+            $datas = $condition($datas);
+        }
 
         // set header
         foreach($this->attributes as $index => $value){
@@ -104,7 +108,8 @@ class ExcelService
         }
 
         // body value
-        foreach($datas as $index => $row){
+        foreach($datas->get() as $index => $row){
+            $alphabet = 'A';
             $each = $row->toArray();
             foreach($each as $value){
                 $sheet->setCellValue(($alphabet++).($index+2), $value);
@@ -112,7 +117,7 @@ class ExcelService
         }
 
         $writer = new WriterXlsx($excel);
-        $fileName = 'Export'. date('Y-m-d h-i-s');
+        $fileName = 'Export-'. date('Y-m-d-h-i-s');
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment; filename="'. urlencode($fileName).'.xlsx"');
         $writer->save('php://output');
