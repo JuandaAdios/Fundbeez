@@ -75,7 +75,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/home', function () {
+    Route::get('/dashboard', function () {
         return view('pages.admin.dashboard');
     });
     Route::post('/import/company', 'InvestmentController@importRegisteredCompany');
