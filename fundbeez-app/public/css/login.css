@@ -97,7 +97,7 @@ form.sign-in-form {
     font-size: 1.1rem;
     color: #333;
 }
-.input-field input:-webkit-autofill{
+.input-field input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #f0f0f0 inset !important;
 }
 .input-field input::placeholder {
@@ -136,11 +136,11 @@ form.sign-in-form {
 }
 
 .btn {
-    width: 150px;
+    width: 250px;
     background-color: #0098ba;
     border: none;
     outline: none;
-    height: 49px;
+    height: 79px;
     border-radius: 49px;
     color: #fff;
     text-transform: uppercase;
@@ -401,6 +401,6 @@ form.sign-in-form {
         left: 50%;
     }
 }
-.sosial-media{
+.sosial-media {
     display: flex;
 }

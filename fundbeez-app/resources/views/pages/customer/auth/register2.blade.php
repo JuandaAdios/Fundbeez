@@ -11,45 +11,51 @@
     <!-- my Css -->
     <link rel="stylesheet" href="{{ asset('/css/login2.css') }}" />
 
-    <title>Login</title>
+    <title>Register</title>
   </head>
   <body>
     <section class="Form my-4 mx-5">
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-lg-5">
-                    <img src="img/logo/allwhite.png" class="logo" alt="">
-                    <h1 class="fw-bold pt-5" style="color: white">Selamat Datang Kembali</h1>
+                    <a href="home"><img src="img/logo/allwhite.png" class="logo" alt=""></a>
+                    <h1 class="fw-bold pt-5" style="color: white">Selamat Datang</h1>
                     <h4 class="fw-light" style="color: white">Investasi dan kembangkan Bisnis mu sekarang dengan Fundbeez</h4>
                     <img src="img/login/vector1.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-7 p-5">
-                    <h1 class="fw-bolder py-3 pt-5"> Masuk </h1>
-                    <form method="post" action="{{ url('login2') }}" class="sign-in-form">
-                        @csrf
+                    <h1 class="fw-bolder py-3 pt-5"> Daftar </h1>
+                    <form method="post" action="{{ url('register') }}" class="sign-in-form">
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="email" placeholder="Email Andrees" class="form-control my-3 p-4" value="{{ old('email') }}" />
+                                <input type="name" placeholder="Nama Anda" class="form-control my-4 p-3" value="{{ old('name') }}"/>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="Masukkan Password anda" class="form-control my-3 p-4" name="password" />
+                                <input type="email" placeholder="Email Andrees" class="form-control my-4 p-3" value="{{ old('email') }}"/>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <button type="submit" class="btn1 mt-3 mb-5">Masuk</button>
+                                <input type="password" placeholder="Masukkan Password anda" class="form-control my-4 p-3" name="password"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="password" placeholder="Konfirmasi Password anda" class="form-control my-4 p-3" name="password_confirmation"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <button type="submit" class="btn1 mt-3 mb-5">Daftar</button>
                                 @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
 
-                        <div>{{ $error }}</div>
-
-                    @endforeach
                             </div>
                         </div>
-
-                        <a href="#">Lupa Password?</a>
-                        <p>Tidak memiliki akun? <a href="register2">Daftar disini</p>
+                        <p>Sudah memiliki akun? <a href="login2">Masuk disini</p>
                     </form>
                 </div>
             </div>

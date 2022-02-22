@@ -22,10 +22,14 @@ Route::prefix('/')->group(function () {
     Route::get('/register', function () {
         return view('pages.customer.auth.register');
     });
-
     Route::get('/login', function () {
         return view('pages.customer.auth.login');
     })->name('login');
+    Route::get('/register2', function () {
+        return view('pages.customer.auth.register2');
+    })->name('register2');
+
+
     Route::get('/testdashboard', function () {
         return view('layouts.admin');
     })->name('testdashboard');
@@ -35,7 +39,7 @@ Route::prefix('/')->group(function () {
     })->name('email_resend');
 
     Route::post('/login', 'AuthController@login');
-    Route::post('/register', 'AuthController@register');
+    Route::post('/register2', 'AuthController@register2');
 
     Route::get('/business/{investment}', 'InvestmentController@show')->name('business_detail');
     Route::get('/business-list', 'InvestmentController@index')->name('business_list');

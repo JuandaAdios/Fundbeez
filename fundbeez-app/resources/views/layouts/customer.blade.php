@@ -20,7 +20,7 @@
 
 <body>
     <!-- Nav bar -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-lg fixed-top" style="background-color: #ffff">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-lg fixed-top" style="background-color: rgba(0, 0, 0, 0)">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="{{ asset('img/logo/logoFundbeez-sm.png') }}" alt="" width="200" />
