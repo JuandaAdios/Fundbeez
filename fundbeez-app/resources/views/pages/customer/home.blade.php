@@ -96,33 +96,20 @@
     <!-- Daftar Business -->
     <section id="daftarbisnis" style="padding: 0 0 100px 0">
         <div class="container">
-            <h2 class="text-center">Daftar Bini</h2>
+            <h2 class="text-center">Daftar Bisnis</h2>
             <hr class="section-devider" />
             <div class="row" style="margin:50px 0">
+                <?php $business = App\Models\Investment::orderBy('created_at', 'desc')->limit(3)->get(); ?>
+                @foreach ($business as $business)
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="{{ asset('/img/sample/Contoh2.jpg') }}" class=" card-img-top" alt="..." />
+                        <img src="{{ asset($business->company_image) }}" class=" card-img-top" alt="..." />
                         <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">{{$business->caption}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="img/sample/Contoh3.jpg" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="img/sample/Contoh4.jpg" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="text-center">
                 <a class="btn btn-lg rounded-pill text-white" href="/business-list" role="button" style="background-color: #86cddd">Tampilkan Bisnis Lainnya</a>

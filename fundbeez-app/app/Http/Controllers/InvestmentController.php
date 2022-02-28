@@ -38,8 +38,8 @@ class InvestmentController extends Controller
     {
         $data = $request->validated();
 
-        $companyImage = 'company-image-' . date('Y-m-d-h-i-s');
-        $ownerImage = 'owner-image-' . date('Y-m-d-h-i-s');
+        $companyImage = 'company-image-' . date('Y-m-d-h-i-s').'.'.$request->file('company_image')->extension();
+        $ownerImage = 'owner-image-' . date('Y-m-d-h-i-s').'.'.$request->file('owner_image')->extension();;
         $request->file('company_image')->move(public_path('img/investments/companies'), $companyImage);
         $request->file('owner_image')->move(public_path('img/investments/owners'), $ownerImage);
 
