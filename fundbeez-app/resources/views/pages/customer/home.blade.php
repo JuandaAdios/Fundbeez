@@ -96,7 +96,7 @@
     <!-- Daftar Business -->
     <section id="daftarbisnis" style="padding: 0 0 100px 0">
         <div class="container">
-            <h2 class="text-center">Daftar Bisnis</h2>
+            <h2 class="text-center">Daftar Bini</h2>
             <hr class="section-devider" />
             <div class="row" style="margin:50px 0">
                 <div class="col-md-4 mb-3">
