@@ -139,24 +139,39 @@
             position: relative;
         }
 
-        .testimonial {}
+        .testimonial {
+            padding: 50px 200px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #34aeff
+        }
 
     </style>
     <section id="Review" style="padding: 0 0 100px 0">
         <div class="container text-center">
-            <h2 class="text-center">Review</h2>
+            <h2 class="text-center">Testimoni</h2>
             <hr class="section-devider" />
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper text-center">
-                    <div class="swiper-slide card">
+                    <div class="swiper-slide">
                         <div class="testimonial">
-                            <q>Develop relevant, sought-after skills and earn invaluable recognition from an international selection of universities, entirely online</q>
-                            <p>B. J. Habibie</p>
+                            <q class="fs-4">Develop relevant, sought-after skills and earn invaluable recognition from an international selection of universities, entirely online</q>
+                            <p class="fw-bold mt-4 fs-6">B. J. Habibie <br><span class="fw-normal" style="font-size:12px;">Mantan Presiden Indonesia</span></p>
                         </div>
                     </div>
-                    <div class="swiper-slide card">Slide 2</div>
-                    <div class="swiper-slide card">Slide 3</div>
-                    <div class="swiper-slide card">Slide 4</div>
+                    <div class="swiper-slide ">
+                        <div class="testimonial">
+                            <q class="fs-4">When something is important enough, you do it even if the odds are not in your favor</q>
+                            <p class="fw-bold mt-4 fs-6">Elon Musk <br><span class="fw-normal" style="font-size:12px;">CEO Tesla, Inc.</span></p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <div class="testimonial">
+                            <q class="fs-4">You've got to start with the customer experience and work backwards to the technology. You can't start with the technology and try to figure out where can I sell it.</q>
+                            <p class="fw-bold mt-4 fs-6">Steve Jobs <br><span class="fw-normal" style="font-size:12px;">CEO Tesla, Inc.</span></p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="swiper-pagination"></div>

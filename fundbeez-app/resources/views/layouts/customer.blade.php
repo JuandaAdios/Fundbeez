@@ -152,16 +152,9 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
             },
         });
     </script>
