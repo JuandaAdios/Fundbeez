@@ -3,7 +3,7 @@
 @section('title', 'Fundbeez')
 <link rel="icon" href="{!! asset('img/logo/icon-fundbeez.png') !!}" />
 
-@section('custome-css')
+@section('custom-css')
     <link rel="stylesheet" href="{{ asset('css/daftarInvestasi.css') }}" />
 
 @endsection
@@ -32,12 +32,15 @@
 
     <!-- Daftar Business -->
     <section id="daftarbisnis">
-        <div class="container">
+        <div class="container text-center">
             <div class="text-center">
                 <h2>Daftar Bisnis</h2>
             </div>
             <hr class="section-devider" />
-            <div class="row row-cols-3">
+            <img src="{{ asset('/img/vector/creative-writing-pana.svg') }}" alt="" width="300px">
+            <h3 class="fs-5">Segera Hadir</h3>
+            <p>Fitur ini masih dalam tahap pengembangan.</p>
+            {{-- <div class="row row-cols-3">
                 @foreach ($data as $value)
                     <div class="col">
                         <div class="card">
@@ -58,7 +61,7 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- Akhir Daftar Business -->

@@ -2,7 +2,7 @@
 
 @section('title', 'Investment')
 
-@section('custome-css')
+@section('custom-css')
     <link rel="stylesheet" href="{{ asset('css/customer_home.css') }}" />
 
 @endsection

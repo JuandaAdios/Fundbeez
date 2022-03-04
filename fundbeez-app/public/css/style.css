@@ -1,27 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-
-/* Color of the links BEFORE scroll */
-.navbar-scroll .nav-link,
-.navbar-scroll .navbar-toggler-icon {
-    color: #fff;
+*{
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #0098ba;
+}
+p{
+    color: #222222;
 }
 
-/* Color of the links AFTER scroll */
-.navbar-scrolled .nav-link,
-.navbar-scrolled .navbar-toggler-icon {
-    color: #4f4f4f;
-}
-
-/* Color of the navbar AFTER scroll */
-.navbar-scrolled {
-    background-color: #fff;
-}
-
-/* An optional height of the navbar AFTER scroll */
-.navbar.navbar-scroll.navbar-scrolled {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
 .section-devider {
     margin: 5px auto;
     margin-bottom: 20px;
@@ -29,4 +17,32 @@
     width: 80px;
     padding: 3px;
     border-radius: 20px;
+}
+
+.toast-container {
+    position: fixed;
+    right: 50px;
+    top: 100px;
+    z-index: 9999;
+}
+
+.bg-fb-primary{
+    background-color: #0098ba;
+}
+.border-fb-primary{
+    border: 2px solid #0098ba;
+}
+
+.btn.btn-fb-warning{
+    background-color: #ffd600;
+}
+.btn.btn-fb-warning:hover{
+    background-color: #ffe45d;
+}
+.btn.btn-fb-primary{
+    background-color: #0098ba;
+    color: white;
+}
+.btn.btn-fb-primary:hover{
+    background-color: #00afd6;
 }

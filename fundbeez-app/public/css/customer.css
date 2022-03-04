@@ -1,26 +1,37 @@
-/* Color of the links BEFORE scroll */
-.navbar-scroll .nav-link,
-.navbar-scroll .navbar-toggler-icon {
-    color: #fff;
+@media (min-width:768px) {
+    .navbar{
+        padding: 15px 0;
+    }
+    .navbar.nav-scrolled{
+        padding: 10px 0;
+    }
+    .navbar.nav-scrolled{
+        font-size: 15px;
+    }
 }
 
-/* Color of the links AFTER scroll */
-.navbar-scrolled .nav-link,
-.navbar-scrolled .navbar-toggler-icon {
-    color: #4f4f4f;
+.navbar-nav .nav-item .nav-link{
+    font-weight: 500;
+    color: #1a1a1a;
+    position: relative;
+}
+.navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-item .nav-link:hover{
+    color: #0098ba;
 }
 
-/* Color of the navbar AFTER scroll */
-.navbar-scrolled {
-    background-color: #fff;
-}
 
-/* An optional height of the navbar AFTER scroll */
-.navbar.navbar-scroll.navbar-scrolled {
-    padding-top: 5px;
-    padding-bottom: 5px;
+footer {
+    background-color: #101820;
+    padding: 2rem 1rem 0.5rem 1rem;
 }
-#kontenfooter {
-    background-color: #333333;
-    padding: 2rem 1rem;
+footer p{
+    color: white;
+
+}
+footer a{
+    text-decoration: none;
+}
+footer a:hover{
+    font-weight: 700;
 }
