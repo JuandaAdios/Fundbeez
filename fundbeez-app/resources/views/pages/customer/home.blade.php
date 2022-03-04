@@ -45,6 +45,9 @@
                 <div class="col">
                     <h2 class="fs-1">0</h2>
                 </div>
+                <div class="col">
+                    <h2 class="fs-1">0</h2>
+                </div>
             </div>
             <div class="row text-center">
                 <div class="col">
@@ -52,6 +55,9 @@
                 </div>
                 <div class="col">
                     <h3 class="fs-5">Bisnis Terdaftar</h3>
+                </div>
+                <div class="col">
+                    <h3 class="fs-5">Bisnis Terdanai</h3>
                 </div>
                 <div class="col">
                     <h3 class="fs-5">Total Investasi</h3>
@@ -99,7 +105,6 @@
             <hr class="section-devider" />
             <img src="{{ asset('/img/vector/creative-writing-pana.svg') }}" alt="" width="300px">
             <h3 class="fs-5">Segera Hadir</h3>
-            <p>Fitur ini masih dalam tahap pengembangan.</p>
             {{-- <div class="row" style="margin:50px 0">
                 <?php $business = App\Models\Investment::orderBy('created_at', 'desc')
                     ->limit(3)
@@ -123,6 +128,41 @@
         </div>
     </section>
     <!-- Akhir Daftar Business -->
+    <!-- Review -->
+    <style>
+        .swiper {
+            height: 300px;
+        }
+
+        .swiper-slide {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .testimonial {}
+
+    </style>
+    <section id="Review" style="padding: 0 0 100px 0">
+        <div class="container text-center">
+            <h2 class="text-center">Review</h2>
+            <hr class="section-devider" />
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper text-center">
+                    <div class="swiper-slide card">
+                        <div class="testimonial">
+                            <q>Develop relevant, sought-after skills and earn invaluable recognition from an international selection of universities, entirely online</q>
+                            <p>B. J. Habibie</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card">Slide 2</div>
+                    <div class="swiper-slide card">Slide 3</div>
+                    <div class="swiper-slide card">Slide 4</div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Diawasi oleh -->
     <section id="diawasi" style="padding: 100px 0">

@@ -39,7 +39,6 @@
             <hr class="section-devider" />
             <img src="{{ asset('/img/vector/creative-writing-pana.svg') }}" alt="" width="300px">
             <h3 class="fs-5">Segera Hadir</h3>
-            <p>Fitur ini masih dalam tahap pengembangan.</p>
             {{-- <div class="row row-cols-3">
                 @foreach ($data as $value)
                     <div class="col">

@@ -14,6 +14,8 @@
     <!-- My Css -->
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('/css/customer.css') }}" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
     @yield('custom-css')
 
 </head>
@@ -89,7 +91,7 @@
                 <div class="row row-cols-lg-3">
                     <div class="text-white">
                         <img src="{{ asset('img/Logo/logo-white.png') }}" width="200px" />
-                        <h2 class="fs-4">PT.Fundbeez Indonesia</h2>
+                        <h2 class="fs-5">PT.Fundbeez Finansial Indonesia</h2>
                         <p>Jl. Jend. Sudirman blok B.89</p>
                     </div>
                     <div class="text-white">
@@ -126,6 +128,7 @@
     @endif
 
     @yield('custom-script')
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script>
@@ -137,6 +140,30 @@
                 navbar.classList.remove('nav-scrolled');
             }
         };
+    </script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
     </script>
 </body>
 
