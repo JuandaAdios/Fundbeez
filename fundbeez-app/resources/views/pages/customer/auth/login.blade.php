@@ -25,11 +25,11 @@
                 </div>
                 <div class="col-lg-7 p-5">
                     <h1 class="fw-bolder py-3 pt-5"> Masuk </h1>
-                    <form method="post" action="{{ url('login2') }}" class="sign-in-form">
+                    <form method="post" action="{{ url('login') }}" class="sign-in-form">
                         @csrf
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="email" placeholder="Email Andrees" class="form-control my-3 p-4" value="{{ old('email') }}" />
+                                <input type="email" placeholder="Email Andrees" name="email" class="form-control my-3 p-4" value="{{ old('email') }}" />
                             </div>
                         </div>
                         <div class="form-row">

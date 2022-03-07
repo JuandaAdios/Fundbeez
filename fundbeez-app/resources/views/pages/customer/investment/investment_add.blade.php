@@ -168,20 +168,12 @@
                                 <input class="form-control" type="number" placeholder="Perkiraan lot saham yang dilepas ke umum" name="public_stock" value="{{ old('public_stock') }}" required />
                                 <span class="input-group-text">%</span>
                             </div>
-                            <div class="input-field input-group">
-                                <span class="input-group-text">Rp</span>
-                                <input class="form-control" type="number" placeholder="Omzet setelah jadi penerbit" name="profit_prediction" value="{{ old('profit_prediction') }}" required />
-                            </div>
                             <div class="d-flex">
                                 <p class="text-white" style="font-size: 30px;cursor: pointer;" onclick="resetForm()"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Sebelumnya</p>
                                 <button type="submit" class="btn btn-warning  m-auto">Selesai</button>
                             </div>
                         </div>
                         <div style="height: 500px;overflow-y:scroll">
-                            <div class="input-field input-group">
-                                <input class="form-control" type="number" placeholder="Perkiraan dividen tahunan" name="dividen" value="{{ old('dividen') }}" max="100" min="0" required />
-                                <span class="input-group-text">%</span>
-                            </div>
                             <div class="input-field">
                                 <input class="form-control" type="text" placeholder="Video Profile (opsional)" name="video_profile" value="{{ old('video_profile') }}" />
                             </div>
