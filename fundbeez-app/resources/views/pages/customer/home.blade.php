@@ -3,7 +3,7 @@
 @section('title', 'Fundbeez')
 <link rel="icon" href="{!! asset('img/logo/icon-fundbeez.png') !!}" />
 
-@section('custome-css')
+@section('custom-css')
     <link rel="stylesheet" href="{{ asset('css/customer_home.css') }}" />
 
 @endsection
@@ -22,8 +22,8 @@
                 Crowdfunding <br>
                 Di Indonesia</h1>
             <p class="lead" style="color: aliceblue">Investasi dan kembangkan bisnismu sekarang dengan Fundbeez</p>
-            <a class="btn btn-lg rounded-pill" href="/investment" role="button" style="background-color: #ffd600">Ajukan Pendanaan</a>
-            <a class="btn btn-lg rounded-pill text-white" href="/investor/add" style="background-color: #0098ba">Daftar Sebagai Investor</a>
+            <a class="btn btn-fb-warning rounded-pill" href="/investment" role="button">Ajukan Pendanaan</a>
+            <a class="btn btn-fb-primary rounded-pill" href="/investor/add">Daftar Sebagai Investor</a>
         </div>
 
         <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -34,28 +34,33 @@
 
     <!-- About Fundbeez -->
     <section id="about">
-        <div class="container rounded-pill shadow-lg" style="background-color: #ffff">
+        <div class="container rounded-pill border shadow-sm py-4 my-4">
             <div class="row text-center">
                 <div class="col">
-                    <h2>{{ App\Models\User::count() }}</h2>
+                    <h2 class="fs-1">{{ App\Models\User::count() }}</h2>
                 </div>
                 <div class="col">
-                    <h2>{{ App\Models\Investment::count() }}</h2>
+                    <h2 class="fs-1">{{ App\Models\Investment::count() }}</h2>
                 </div>
                 <div class="col">
-                    <h2>{{ App\Models\Investment::where('status', '=' , App\Models\Enums\InvestmentStatus::ACCEPT)->count() }}</h2>
-
+                    <h2 class="fs-1">{{ App\Models\Investment::where('status', App\Models\Enums\InvestmentStatus::ACCEPT)->count() }}</h2>
+                </div>
+                <div class="col">
+                    <h2 class="fs-1">0</h2>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col">
-                    <h3>Investor Terdaftar</h3>
+                    <h3 class="fs-5">Investor Terdaftar</h3>
                 </div>
                 <div class="col">
-                    <h3>Bisnis Terdaftar</h3>
+                    <h3 class="fs-5">Bisnis Terdaftar</h3>
                 </div>
                 <div class="col">
-                    <h3>Bisnis Berjalan</h3>
+                    <h3 class="fs-5">Bisnis Terdanai</h3>
+                </div>
+                <div class="col">
+                    <h3 class="fs-5">Total Investasi</h3>
                 </div>
             </div>
         </div>
@@ -67,8 +72,8 @@
 
     <!-- Reason -->
     <section id="reason">
-        <div class="container" style="margin-bottom: 50px">
-            <h2 class="display-6 mb-4 fw-bold text-center">Mengapa Memilih Fundbeez?</h2>
+        <div class="container py-4">
+            <h2 class="fs-3 mb-4 fw-bold text-center">Mengapa Memilih Fundbeez?</h2>
             <div class="row text-center">
                 <div class="col-md-4 mb-3">
                     <div class="card">
@@ -94,29 +99,85 @@
     <!-- Akhir Reason -->
 
     <!-- Daftar Business -->
-    <section id="daftarbisnis" style="padding: 0 0 100px 0">
-        <div class="container">
+    <section id="businessList" style="padding: 0 0 100px 0">
+        <div class="container text-center">
             <h2 class="text-center">Daftar Bisnis</h2>
             <hr class="section-devider" />
-            <div class="row" style="margin:50px 0">
-                <?php $business = App\Models\Investment::orderBy('created_at', 'desc')->limit(3)->get(); ?>
+            <img src="{{ asset('/img/vector/creative-writing-pana.svg') }}" alt="" width="300px">
+            <h3 class="fs-5">Segera Hadir</h3>
+            {{-- <div class="row" style="margin:50px 0">
+                <?php $business = App\Models\Investment::orderBy('created_at', 'desc')
+                    ->limit(3)
+                    ->get(); ?>
                 @foreach ($business as $business)
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset($business->company_image) }}" class=" card-img-top" alt="..." />
-                        <div class="card-body">
-                            <p class="card-text">{{$business->caption}}</p>
+                    <div class="business col-md-4 mb-3">
+                        <div>
+                            <img class="w-100" src="{{ asset($business->company_image) }}" class=" card-img-top" alt="..." />
+                            <div class="py-4">
+                                <h3 class="card-title">{{ $business->company_name }}</h3>
+                                <p class="card-text">{{ Illuminate\Support\Str::limit($business->caption, 150, '...') }}</p>
+                                <a href="">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
             <div class="text-center">
-                <a class="btn btn-lg rounded-pill text-white" href="/business-list" role="button" style="background-color: #86cddd">Tampilkan Bisnis Lainnya</a>
-            </div>
+                <a class="btn btn-fb-primary btn-lg rounded-pill text-white" href="/business-list" role="button">Tampilkan Bisnis Lainnya</a>
+            </div> --}}
         </div>
     </section>
     <!-- Akhir Daftar Business -->
+    <!-- Review -->
+    <style>
+        .swiper {
+            height: 300px;
+        }
+
+        .swiper-slide {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .testimonial {
+            padding: 50px 200px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #34aeff
+        }
+
+    </style>
+    <section id="Review" style="padding: 0 0 100px 0">
+        <div class="container text-center">
+            <h2 class="text-center">Testimoni</h2>
+            <hr class="section-devider" />
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper text-center">
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <q class="fs-4">Develop relevant, sought-after skills and earn invaluable recognition from an international selection of universities, entirely online</q>
+                            <p class="fw-bold mt-4 fs-6">B. J. Habibie <br><span class="fw-normal" style="font-size:12px;">Mantan Presiden Indonesia</span></p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <div class="testimonial">
+                            <q class="fs-4">When something is important enough, you do it even if the odds are not in your favor</q>
+                            <p class="fw-bold mt-4 fs-6">Elon Musk <br><span class="fw-normal" style="font-size:12px;">CEO Tesla, Inc.</span></p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <div class="testimonial">
+                            <q class="fs-4">You've got to start with the customer experience and work backwards to the technology. You can't start with the technology and try to figure out where can I sell it.</q>
+                            <p class="fw-bold mt-4 fs-6">Steve Jobs <br><span class="fw-normal" style="font-size:12px;">CEO Tesla, Inc.</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Diawasi oleh -->
     <section id="diawasi" style="padding: 100px 0">

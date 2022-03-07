@@ -12,7 +12,9 @@
     position: relative;
     z-index: 1;
 }
-
+.jumbotron .container h1{
+    text-shadow: 2px 2px 12px black;
+}
 .jumbotron .container .overlay {
     position: absolute;
     top: 0;
@@ -34,6 +36,7 @@
 #reason {
     background-color: #b3e1eb;
 }
+
 
 #diawasi {
     padding: 4rem 3rem;

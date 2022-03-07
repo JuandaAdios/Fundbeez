@@ -14,16 +14,18 @@
     <!-- My Css -->
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('/css/customer.css') }}" />
-    @yield('custome-css')
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+    @yield('custom-css')
 
 </head>
 
 <body>
-    <!-- Nav bar -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-lg fixed-top" style="background-color: rgba(0, 0, 0, 0)">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm fixed-top bg-white">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('img/logo/logoFundbeez-sm.png') }}" alt="" width="200" />
+                <img src="{{ asset('img/logo/logoFundbeez-sm.png') }}" alt="" width="150px" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,7 +38,7 @@
                         </li>
                     @endif
                     <li class="nav-item">
-                        <a class="nav-link @if (request()->is(['/', 'home'])) active @endif" aria-current="page" href="/">Beranda</a>
+                        <a class="nav-link @if (request()->is(['/', 'home'])) active @endif" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link @if (request()->is('business-list')) active @endif" href="/business-list">Daftar Bisnis</a>
@@ -71,9 +73,9 @@
                         </ul>
                     </div>
                 @else
-                    <div class="btn-group ms-auto" role="group" aria-label="Basic example">
-                        <a href="/login" class="btn shadow-lg ms-auto" style="background-color: #fbfbfb">Masuk</a>
-                        <a href="/register" class="btn text-white shadow-lg ms-auto" style="background-color: #0098ba">Daftar</a>
+                    <div class="btn-auth btn-group ms-auto ">
+                        <a href="/login" class="btn btn-light shadow-sm">Masuk</a>
+                        <a href="/register" class="btn text-white shadow-sm bg-fb-primary">Daftar</a>
                     </div>
                 @endif
 
@@ -82,48 +84,34 @@
     </nav>
     @yield('content')
 
-    <!-- konten footer -->
+    <!-- Footer -->
     <footer>
-        <div id="kontenfooter">
+        <div>
             <div class="container py-4">
                 <div class="row row-cols-lg-3">
                     <div class="text-white">
-                        <img src="{{ asset('img/Logo/logo-white.png') }}" width="200rem" />
-                        <h2></h2>
-                        <h2 class="font2 fs-3">PT.Fundbeez Indonesia</h2>
-                        <h4 class="font1 fs-6">Jl. Jend. Sudirman blok B.89</h4>
+                        <img src="{{ asset('img/Logo/logo-white.png') }}" width="200px" />
+                        <h2 class="fs-5">PT.Fundbeez Finansial Indonesia</h2>
+                        <p>Jl. Jend. Sudirman blok B.89</p>
                     </div>
                     <div class="text-white">
-                        <p class="fs-4 "><a href="#" class="text-reset">Karir</a></p>
-                        <p class="fs-4 "><a href="#" class="text-reset">Syarat dan Ketentuan</a></p>
-                        <p class="fs-4 "><a href="#" class="text-reset">Hubungi Kami</a></p>
-                        <p class="fs-4 "><a href="#" class="text-reset">Tentang Fundbeez</a></p>
+                        <p class="fs-6 "><a href="#" class="text-reset">Karir</a></p>
+                        <p class="fs-6 "><a href="#" class="text-reset">Syarat dan Ketentuan</a></p>
+                        <p class="fs-6 "><a href="#" class="text-reset">Hubungi Kami</a></p>
+                        <p class="fs-6 "><a href="#" class="text-reset">Tentang Fundbeez</a></p>
                     </div>
                     <div class="text-white">
-                        <p class="fs-5"><i class="fas fa-phone-alt"></i> 0877-9117-4370</p>
-                        <p class="fs-5"><i class="fas fa-envelope"></i> fundbeez@gmail.com</p>
+                        <p class="fs-6"><i class="fas fa-phone-alt"></i> 0877-9117-4370</p>
+                        <p class="fs-6"><i class="fas fa-envelope"></i> fundbeez@gmail.com</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- footer -->
-        <div class="text-white text-center p-3" style="background-color: #333333">
-            <p>© Copyright, all right reserved @ <a href="https://www.instagram.com/fundbeez/" class="text-white fw-bold">Fundbeez.com</a></p>
+        <div class="text-white text-center pt-3">
+            <p style="font-size: 14px">© Copyright, all right reserved @<a href="https://www.instagram.com/fundbeez/" class="text-white fw-bold">Fundbeez.com</a></p>
         </div>
     </footer>
 
-    <!-- akhir footer -->
-
-    <style>
-        .toast-container {
-            position: fixed;
-            right: 50px;
-            top: 100px;
-            z-index: 9999;
-        }
-
-    </style>
     @if ($errors->all())
         <div class="toast-container">
             @foreach ($errors->all() as $error)
@@ -139,10 +127,37 @@
         </div>
     @endif
 
-    @yield('cutome-script')
+    @yield('custom-script')
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.onscroll = () => {
+            if (window.scrollY > 0) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        };
+    </script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
 </body>
 
 </html>

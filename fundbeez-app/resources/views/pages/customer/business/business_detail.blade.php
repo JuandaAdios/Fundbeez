@@ -3,7 +3,7 @@
 @section('title', 'Fundbeez')
 <link rel="icon" href="{{ asset('/img/logo/icon-fundbeez.png') }}" />
 
-@section('custome-css')
+@section('custom-css')
     <link rel="stylesheet" href="{{ asset('/css/customer_home.css') }}" />
 
 @endsection
@@ -35,11 +35,11 @@
                         <h1>{{ $data['company_name'] }}</h1>
                         <button type="button" class="btn btn-outline-secondary">{{ $data->investment_category()->value('name') }}</button>
                         <h3>Fundbeez Paylater</h3>
-                        <p>Rp.1000.000 - Rp.{{number_format($data['needed_fund'], '2', ',', '.')}}</p>
+                        <p>Rp.1000.000 - Rp.{{ number_format($data['needed_fund'], '2', ',', '.') }}</p>
                         <div class="progress">
                             <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <p>Rp.1000.000 - Rp.{{number_format($data['needed_fund'], '2', ',', '.')}}</p>
+                        <p>Rp.1000.000 - Rp.{{ number_format($data['needed_fund'], '2', ',', '.') }}</p>
                         <div class="progress">
                             <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>

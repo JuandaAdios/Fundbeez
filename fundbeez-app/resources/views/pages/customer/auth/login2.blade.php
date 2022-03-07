@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,12 +13,13 @@
     <link rel="stylesheet" href="{{ asset('/css/login2.css') }}" />
 
     <title>Login</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <section class="Form my-4 mx-5">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-lg-5">
+                <div class="col-lg-5 p-4">
                     <img src="img/logo/allwhite.png" class="logo" alt="">
                     <h1 class="fw-bold pt-5" style="color: white">Selamat Datang Kembali</h1>
                     <h4 class="fw-light" style="color: white">Investasi dan kembangkan Bisnis mu sekarang dengan Fundbeez</h4>
@@ -41,10 +43,8 @@
                             <div class="col-lg-7">
                                 <button type="submit" class="btn1 mt-3 mb-5">Masuk</button>
                                 @foreach ($errors->all() as $error)
-
-                        <div>{{ $error }}</div>
-
-                    @endforeach
+                                    <div>{{ $error }}</div>
+                                @endforeach
                             </div>
                         </div>
 
@@ -55,5 +55,6 @@
             </div>
         </div>
 
-  </body>
+</body>
+
 </html>
